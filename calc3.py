@@ -3,8 +3,9 @@ print ("1. addition")
 print ("2. subtraction")
 print ("3. multiplication")
 print ("4. division")
-print ("Or type quit to exit")
-option = input ("Enter your option 1 2 or 3, or type quit to exit")
+check = False
+while check == False:
+        option = input ("Enter your option 1. addition 2. subtraction 3. multiplication 4. division. Type quit to exit")
 if option == "addition":
     x = input ("What is num 1?")
     y = input ("What is num 2?")
@@ -37,4 +38,6 @@ elif option == "division":
     y = int(y)
     z = x / y
     print (f"The quotient of {x} and {y} is {z}")
-check = False
+elif option == "quit":
+    print ("Goodbye")
+    check = True
