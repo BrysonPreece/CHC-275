@@ -7,3 +7,5 @@ if fish == "Yes":
     print ("Too bad so sad. Womp Womp. :(")
 elif fish == "No":
     print ("Enjoy!")
+elif option == "salt water":
+    print ("You are a fancy fish parent.")
