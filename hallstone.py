@@ -2,7 +2,13 @@ check = False
 option = input ("Enter a number.")
 option = int(option)
 while check == False:
-    if option % 2 == 1:
-        print (option) = 3 + 1
+    if option == 1:
         check = True
+    elif option % 2 == 1:
+        option = (option * 3 + 1)
+        print (option)
+    elif option % 2 == 0:
+        option = (option / 2)
+        print (option)
+        
         
