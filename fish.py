@@ -3,13 +3,13 @@ option = input ("What fish do you have?:")
 if option == "carnivorous":
     print ("Type Yes or No.")
     option = input ("Do you already have it?")
-elif option == "salt water":
-    print ("You are a fancy fish parent.")
-if option == "Yes":
+if  option == "Yes":
     print ("Too bad so sad. Womp Womp. :(")
 elif option == "No":
     print ("Enjoy!")
 elif option == "community":
     print ("You should get more than one.")
+elif option == "salt water":
+    print ("You are a fancy fish parent.")
 else:
-    print ("I don't think that is a type of fish.")
+    option == print("I don't think that is a type of fish.")
