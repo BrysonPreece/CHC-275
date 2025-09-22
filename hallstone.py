@@ -8,4 +8,5 @@ while check == False:
         elif option % 2 ==0:
                 option = option / 2
                 print (option)
+        if option == 1:
                 check = True
