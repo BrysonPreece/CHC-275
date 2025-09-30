@@ -1,3 +1,5 @@
+import json
+import os
 print ("welcome to First Financial Credit Union!")
 print ("What would you like to do today?")
 print ("1. Depositing money into an individual account")
@@ -11,4 +13,4 @@ accountnames = []
 accountbalances = []
 check = False
 while check == False:
-
+    
