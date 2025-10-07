@@ -27,44 +27,99 @@ accountnames, accountbalance = load_accounts()
 exit = False
 while exit == False:
     check = False
-print ("1. Add an account")
-print ("2. Delete an account")
-print ("3. Print all accounts ")
-print ("4.  Withdraw money from a chosen account")
-print ("5. Deposit money into an account")
-print ("6. Transfer money between two accounts")
-print ("7. Exit.")
-choice = input ("Please enter your choice: ").strip()
-if choice == '1':
-    while check == False:
-        accountnames.append(input("Please enter a name for your brand new account"))
-        accountbalance.appned(float(input("Please enter a balance for the corresponding name: $")))
-        confirmation = input ("Would you like to enter another account? Type Yes for Yes, or type No for No")
-        if confirmation == 'Yes':
-            print ("*******************************************************************************************************")
-        elif confirmation == 'n':
-            check = True
-        else:
-            print("Error. Invalid input, please try again :( ")
-            check = True
-elif choice == '3':
-    for i in range (len(accountbalance)):
-        print(f"Account Name: {accountnames[i]}. Account Balance: ${accountbalance[i]}.")
-elif choice =='4':
-    while check == False:
-        name = input ("Please enter a name of that account to withdraw from").strip()
-        try:
-            idx = accountnames.index(name)
-        except ValueError:
-            print ("No account found with that name. Womp Womp :( ")
-        else:
-            amount = float(amount)
-            if amount > 0:
-                accountbalance[idx] -= amount
-                print (f"Withdrew $ {amount} from account '{name}. New balance: ${accountbalance[idx]}.")
+    print ("1. Add an account")
+    print ("2. Delete an account")
+    print ("3. Print all accounts ")
+    print ("4.  Withdraw money from a chosen account")
+    print ("5. Deposit money into an account")
+    print ("6. Transfer money between two accounts")
+    print ("7. Exit.")
+    choice = input ("Please enter your choice: ").strip()
+    if choice == '1':
+        while check == False:
+            accountnames.append(input("Please enter a name for your brand new account"))
+            accountbalance.appned(float(input("Please enter a balance for the corresponding name: $")))
+            confirmation = input ("Would you like to enter another account? Type Yes for Yes, or type No for No")
+            if confirmation == 'Yes':
+                    print ("***************************************************************************************************")
+            elif confirmation == 'No':
+                check = True
             else:
-                print("Invalid amount entered.")
-            confirmation = input("Error. Invalid amount entered :( ")
-            if confirmation == 'y':
-                print ("***************************************************************************************************")
-            eli
+                print("Error. Invalid input, please try again :( ")
+                check = True
+    elif choice == '2':
+        while check == False:
+            name = input("Please enter the name of the account to remove").strip()
+            try:
+                idx = accountnames.index(name)
+            except ValueError:
+                print ("No account found with that name")
+            else:
+                removedname = accountnames.pop(idx)
+                removedbalance = accountbalance.pop(idx)
+                print(f"Removed account '{removedname}' with balance ${removedbalance}.")
+                confirmation = input("Remove another account (Yes or No)").strip().lower
+                if confirmation == 'Yes':
+                    print ("***************************************************************************************************")
+                elif confirmation == 'No':
+                    check = True
+                else:
+                    print ("Invalid input. Womp Womp. Try again")
+                    chexk = True
+    elif choice == '3':
+        for i in range (len(accountbalance)):
+            print(f"Account Name: {accountnames[i]}. Account Balance: ${accountbalance[i]}.")
+    elif choice =='4':
+        while check == False:
+            name = input ("Please enter a name of that account to withdraw from").strip()
+            try:
+                idx = accountnames.index(name)
+            except ValueError:
+                print ("No account found with that name. Womp Womp :( ")
+            else:
+                amount = float(amount)
+                if amount > 0:
+                    accountbalance[idx] -= amount
+                    print (f"Withdrew $ {amount} from account '{name}. New balance: ${accountbalance[idx]}.")
+                else:
+                    print("Invalid amount entered.")
+                confirmation = input("Error. Invalid amount entered :( ")
+                if confirmation == 'Yes':
+                    print ("***************************************************************************************************")
+                elif confirmation == 'No':
+                    check = True
+                else:
+                    print("Invalid input, Womp Womp. :(. Please try again.")
+                    check = True
+    elif choice == '5':
+        while check == False:
+            name = input("Please enter the name of the account to deposit into Por Favor").strip
+            try:
+                idx = accountnames.index(name)
+            except ValueError:
+                print("No account found with that name")
+            else:
+                try:
+                    amount = float(amount)
+                except ValueError:
+                    print ("Invalid amount entered. Womp Womp. Too bad so sad.")
+                else:
+                    amount = float(amount)
+                    if amount > 0:
+                        accountbalance[idx] += amount
+                        print (f"Deposited {amount} into account '{name}'. New balance is ${accountbalance[idx]}")
+                    else:
+                        print("Invalid input. *Cries intensly*. Please try again.")
+                confirmation = input("Deposit into another account (Yes or No)?").strip().lower()
+                if confirmation == 'Yes':
+                    print ("***************************************************************************************************")
+                elif confirmation == 'No':
+                    check = True
+                else: print("Invalid option. Try again.")
+                check = True
+    elif choice == '7':
+        save_accounts(accountnames, accountbalance)
+        print (f"Saved {len(accountnames)} account(s) to {SAVE_FILE}.")
+        exit = True
+    else:
+        print ("Invalid choice. Please try again.")
