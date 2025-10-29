@@ -5,7 +5,8 @@ print("3. multiplication")
 print("4. division")
 check = False
 while check == False:
-    option = input("Enter your option 1. addition 2. subtraction 3. multiplication 4. division. PLEASE ENTER THE WORD, NOT THE NUMBER!!!!! Type quit to exit").strip().lower()
+    option = input("Enter your option 1. addition 2. subtraction 3. multiplication 4. division. PLEASE ENTER THE WORD, NOT THE NUMBER!!!!! Type quit to exit").strip().lower().split()
+    option = "".join(option)
     if option == "addition":
         try:
             x = input ("Enter number 1:")
