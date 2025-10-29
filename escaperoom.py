@@ -32,6 +32,7 @@ while check == False:
     elif option == "3" or option == "3.":
         print ("**************************************************************************************************")
         print(" You investigate the beanbag. It looks like you found a hammer. That can be useful for breaking things.")
+        print("You can use the hammer by typing the word HAMMER.")
         print ("**************************************************************************************************")
         check = True
 
@@ -39,3 +40,12 @@ while check == False:
         print ("**************************************************************************************************")
         print("There is a painting on the wall. It gives you a chill. It looks like it can be broken with something.")
         check = True
+    elif option == "Hammer":
+        print ("Where would you like to use the hammer? 1. Painting, 2. Shelf, 3. Beanbag, 4. Door, 5. Safe. REMEMBER TO TYPE THE NUMBER THAT CORRESPONDS WITH THE ACTION")
+        print ("**************************************************************************************************")
+        if option == "1" or option == "1.":
+            print ("You use the hammer on the painting. It breaks apart and reveals a huge hole on the other side.")
+            print("You step in the hole and find a ladder.")
+            print("You look on the wall and see words that say: THERE IS NO ESCAPE!!!")
+    else:
+        print("That is not an option that you can do.")
