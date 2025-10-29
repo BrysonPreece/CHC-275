@@ -17,6 +17,8 @@ while check == False:
             print(Addition)
         except ValueError:
             print("x and y must be numbers!!!")
+        finally:
+            print("Thanks for using the calculator")
     elif option == "subtraction":
         try:
             x = input("Enter number 1:")
@@ -27,6 +29,8 @@ while check == False:
             print(subtraction)
         except ValueError:
             print("x and y must be numbers!!!")
+        finally:
+            print("Thanks for using the calculator")
     elif option == "multiplication":
         try:
             x = input("Enter number 1:")
@@ -36,6 +40,8 @@ while check == False:
             print(x * y)
         except ValueError:
             print("x and y must be numbers!!!")
+        finally:
+            print("Thanks for using the calculator")
     elif option == "division":
         try:
             x = input("Enter number 1:")
