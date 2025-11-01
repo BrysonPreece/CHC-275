@@ -18,31 +18,39 @@ while check == False:
 
 check = False
 while check == False:
-    option = input("1. Investigate the safe, 2. Investigate the shelf, 3. Investigate the beanbag, 4. Investigate the painting. TYPE THE NUMBER THAT CORRESPONDS TO THE ACTION ").strip().lower()
+    option = input("1. Investigate the safe, 2. Investigate the shelf, 3. Investigate the beanbag, 4. Investigate the painting. 5. Investigate the door. TYPE THE NUMBER THAT CORRESPONDS TO THE ACTION. DO NOT INCLUDE A PERIOD ").strip().lower()
     print("**************************************************************************************************")
-    if option == "1" or option == "1.":
+    if option == "1":
         print("**************************************************************************************************")
         print("You investigate the safe. A combination is needed to unlock it.")
         print("**************************************************************************************************")
-    elif option == "2" or option == "2.":
+    elif option == "2":
         print("**************************************************************************************************")
         print("You investigate the shelf. It looks like something is up there that can be useful. But you can't reach it because you are only 4'1 and not 6'7.")
         print("**************************************************************************************************")
-    elif option == "3" or option == "3.":
+    elif option == "3":
         print("**************************************************************************************************")
         print("You investigate the beanbag. It looks like you found a hammer. That can be useful for breaking things.")
         print("You can use the hammer by typing the word HAMMER.")
         print("**************************************************************************************************")
-        tool = input("Type HAMMER to use it now, or press Enter to go back: ").strip().lower().split()
-        tool = "".join(tool)
-        if tool == "Hammer":
-            option = input("Where would you like to use the hammer? 1. Painting, 2. Shelf, 3. Beanbag, 4. Door, 5. Safe. TYPE THE NUMBER THAT CORRESPONDS WITH THE ACTION ").strip().lower()
+        check = True
+        option = input("Type HAMMER to use it now, or press Enter to go back: ").strip().lower().split()
+        option = "".join(option)
+        if option == "hammer" or option == "Hammer":
+            option = input("Where would you like to use the hammer? 1. Painting, 2. Shelf, 3. Beanbag, 4. Door, 5. Safe. TYPE THE NUMBER THAT CORRESPONDS WITH THE ACTION. DO NOT INCLUDE A PERIOD.").strip().lower()
             if option == "1" or option == "1.":
                 print("You use the hammer on the painting. It breaks apart and reveals a huge hole on the other side.")
                 print("You step in the hole and find a ladder.")
                 print("You look on the wall and see words that say: THERE IS NO ESCAPE!!!")
-            elif option == "2"or "2."or "3"or "3."or "4"or "4."or "5"or "5.":
-                print("You tried to use the Hammer, but it failed.")
                 check = True
+            elif option == "2" or option == "3" or option == "4" or option == "5":
+                print("You tried to use the Hammer, but it failed.")
     elif option == "4" or option == "4.":
         print("You Investigate the painting. It shows a picture of an old man. It reminds you of the book that you read in Freshman year of high school. The Old Man and the Sea.")
+        print("**************************************************************************************************")
+
+    elif option == "5":
+        print ("You investigate the door. It is a metal door that can't be broken.")
+        print("You try pulling and pushing the door, but it won't budge.")
+        print("You think about hitting the gym more.")
+        print("**************************************************************************************************")
