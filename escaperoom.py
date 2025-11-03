@@ -12,13 +12,17 @@ while check == False:
         print("You picked up the knife to cut the rope. You are now free to move around the room.")
         print("You look around the room. There is a door with a keyhole. You need a key to escape the Caboose.")
         print("There is a painting on the wall, a shelf that is too high to reach, a beanbag, and a safe with a combination to unlock. What do you do? ")
+        print("**************************************************************************************************")
+
         check = True
     else:
         print("That is not an option that you can do.")
 
 check = False
 while check == False:
-    option = input("1. Investigate the safe, 2. Investigate the shelf, 3. Investigate the beanbag, 4. Investigate the painting. 5. Investigate the door. TYPE THE NUMBER THAT CORRESPONDS TO THE ACTION. DO NOT INCLUDE A PERIOD ").strip().lower()
+    option = input("1. Investigate the safe, 2. Investigate the shelf, 3. Investigate the beanbag, 4. Investigate the painting. 5. Investigate the door.").strip().lower().split()
+    option = "".join(option)
+    print("TYPE THE NUMBER THAT CORRESPONDS TO THE ACTION. DO NOT INCLUDE A PERIOD")
     print("**************************************************************************************************")
     if option == "1":
         print("**************************************************************************************************")
@@ -34,23 +38,43 @@ while check == False:
         print("You can use the hammer by typing the word HAMMER.")
         print("**************************************************************************************************")
         check = True
-        option = input("Type HAMMER to use it now, or press Enter to go back: ").strip().lower().split()
-        option = "".join(option)
-        if option == "hammer" or option == "Hammer":
-            option = input("Where would you like to use the hammer? 1. Painting, 2. Shelf, 3. Beanbag, 4. Door, 5. Safe. TYPE THE NUMBER THAT CORRESPONDS WITH THE ACTION. DO NOT INCLUDE A PERIOD.").strip().lower()
-            if option == "1" or option == "1.":
-                print("You use the hammer on the painting. It breaks apart and reveals a huge hole on the other side.")
-                print("You step in the hole and find a ladder.")
-                print("You look on the wall and see words that say: THERE IS NO ESCAPE!!!")
-                check = True
-            elif option == "2" or option == "3" or option == "4" or option == "5":
-                print("You tried to use the Hammer, but it failed.")
     elif option == "4" or option == "4.":
-        print("You Investigate the painting. It shows a picture of an old man. It reminds you of the book that you read in Freshman year of high school. The Old Man and the Sea.")
-        print("**************************************************************************************************")
-
+        print("You Investigate the painting. It shows a picture of an old man.")
+        print ("It reminds you of the book The Old Man and The Sea that you read in high school in your freshman year.")
     elif option == "5":
         print ("You investigate the door. It is a metal door that can't be broken.")
         print("You try pulling and pushing the door, but it won't budge.")
         print("You think about hitting the gym more.")
         print("**************************************************************************************************")
+    else:
+        print("You hear a voice. It sounds like Professor Oak from Pokemon.")
+        print("It looks like he is saying something to you.")
+        print("There is a time and place for everything, but not now.")
+        print("**************************************************************************************************")
+check = False
+while check == False:
+    option = input("Type HAMMER to use it now: ").strip().lower().split()
+    option = "".join(option)
+    if option == "hammer":
+        option = input("Where would you like to use the hammer? 1. Painting, 2. Shelf, 3. Beanbag, 4. Door, 5. Safe. TYPE THE NUMBER THAT CORRESPONDS WITH THE ACTION. DO NOT INCLUDE A PERIOD.").strip().lower()
+        if option == "1" or option == "1.":
+            print("You use the hammer on the painting. It breaks apart and reveals a huge hole on the other side.")
+            print("You step in the hole and find a ladder.")
+            print("You look on the wall and see words that say: THERE IS NO ESCAPE!!!")
+            print("**************************************************************************************************")
+            check = True
+        elif option == "2":
+            print("You try and use your hammer on the shelf but it's too high up to use.")
+        elif option == "3":
+            print("You already searched the beanbag enough. It's usless now.")
+        elif option == "4":
+            print("The door is made with a hard steel.")
+            print("You try and use the hammer on the door, but it's not very effective. It didn't make a dent in it.")
+            print("You feel stupid because you have been playing Pokemon for 67 years now.")
+            print("You should have known that steel is not very effective onto steel types or objects.")
+        elif option == "5":
+            print("You")
+        else:
+            print("The action you wish to do does not compute with our system.")
+            print("Please try again later.")
+            print("**************************************************************************************************")
