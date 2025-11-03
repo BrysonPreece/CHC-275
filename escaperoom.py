@@ -102,6 +102,10 @@ while check == False:
         option = input("Would you like to use an item from your inviontory? Type Yes or No").strip().lower().split()
         option == "".join(option)
         print("**************************************************************************************************")
+        if option == "yes":
+            option = input("Please choose an item from your invintory to use.")
+            print(Invitory)
+            if option == "ladder":
                 print("You used the ladder to climb up the shelf. You see something and add it to your invintory")
                 print("You added a code to the invontory")
                 print("**************************************************************************************************")
