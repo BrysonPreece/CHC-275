@@ -65,15 +65,23 @@ while check == False:
             check = True
         elif option == "2":
             print("You try and use your hammer on the shelf but it's too high up to use.")
+            print("**************************************************************************************************")
+
         elif option == "3":
             print("You already searched the beanbag enough. It's usless now.")
+            print("**************************************************************************************************")
+
         elif option == "4":
             print("The door is made with a hard steel.")
             print("You try and use the hammer on the door, but it's not very effective. It didn't make a dent in it.")
             print("You feel stupid because you have been playing Pokemon for 67 years now.")
             print("You should have known that steel is not very effective onto steel types or objects.")
+            print("**************************************************************************************************")
+
         elif option == "5":
             print("You try and use the hammer on the safe. It does nothing to it.")
+            print("**************************************************************************************************")
+
         else:
             print("The action you wish to do does not compute with our system.")
             print("Please try again later.")
