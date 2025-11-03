@@ -73,7 +73,7 @@ while check == False:
             print("You feel stupid because you have been playing Pokemon for 67 years now.")
             print("You should have known that steel is not very effective onto steel types or objects.")
         elif option == "5":
-            print("You")
+            print("You try and use the hammer on the safe. It does nothing to it.")
         else:
             print("The action you wish to do does not compute with our system.")
             print("Please try again later.")
