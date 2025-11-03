@@ -96,11 +96,24 @@ while check == False:
     if option == "1":
         print("You already inspected the painting. There is nothing to do here besides looking at that message on the wall.")
         print("The message says: THERE IS NO ESCAPE!!!")
+        print("**************************************************************************************************")
+
     elif option == "2":
         print("The shelf is too high up to reach. You can reach whatever is up there with an object.")
+        print("**************************************************************************************************")
+
     elif option == "3":
         print("The beanbag has already been inspected.")
+        print("**************************************************************************************************")
+
     elif option == "4":
         print("The door is made of steel. It won't budge without a key.")
-    elif option == "5:
-    
+        print("**************************************************************************************************")
+
+    elif option == "5":
+        print("The safe is locked. You need a code to open it.")
+        print("**************************************************************************************************")
+
+    elif option == "6":
+        print (Invitory)
+        print("**************************************************************************************************")
