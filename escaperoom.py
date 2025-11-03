@@ -59,7 +59,7 @@ while check == False:
         option = input("Where would you like to use the hammer? 1. Painting, 2. Shelf, 3. Beanbag, 4. Door, 5. Safe. TYPE THE NUMBER THAT CORRESPONDS WITH THE ACTION. DO NOT INCLUDE A PERIOD.").strip().lower()
         if option == "1" or option == "1.":
             print("You use the hammer on the painting. It breaks apart and reveals a huge hole on the other side.")
-            print("You step in the hole and find a ladder.")
+            print("You step in the hole and find a ladder and a pouch that can be used for invitory.")
             print("You look on the wall and see words that say: THERE IS NO ESCAPE!!!")
             print("**************************************************************************************************")
             check = True
@@ -86,3 +86,21 @@ while check == False:
             print("The action you wish to do does not compute with our system.")
             print("Please try again later.")
             print("**************************************************************************************************")
+Invitory = ["Ladder"]
+check = False
+while check == False:
+    option = input("You add the Ladder to your invitory. What do you do now?")
+    print("1. Check the painting. 2. Check the Shelf. 3. Check the beanbag. 4. Check the Door. 5. Check the Safe")
+    print("6. Open Invitory")
+    print("Enter the number that corresponds to the action. Remember, don't type periods.")
+    if option == "1":
+        print("You already inspected the painting. There is nothing to do here besides looking at that message on the wall.")
+        print("The message says: THERE IS NO ESCAPE!!!")
+    elif option == "2":
+        print("The shelf is too high up to reach. You can reach whatever is up there with an object.")
+    elif option == "3":
+        print("The beanbag has already been inspected.")
+    elif option == "4":
+        print("The door is made of steel. It won't budge without a key.")
+    elif option == "5:
+    
