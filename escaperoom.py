@@ -109,7 +109,7 @@ while check == False:
                 print("You used the ladder to climb up the shelf. You see something and add it to your invintory")
                 print("You added a code to the invontory")
                 print("**************************************************************************************************")
-
+                check = True
             else:
                 print("That is not an object that you can use in your invintory")
         elif option == "no":
