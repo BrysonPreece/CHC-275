@@ -38,7 +38,7 @@ while check == False:
         print("You can use the hammer by typing the word HAMMER.")
         print("**************************************************************************************************")
         check = True
-    elif option == "4" or option == "4.":
+    elif option == "4":
         print("You Investigate the painting. It shows a picture of an old man.")
         print ("It reminds you of the book The Old Man and The Sea that you read in high school in your freshman year.")
     elif option == "5":
