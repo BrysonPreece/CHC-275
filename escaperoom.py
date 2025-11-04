@@ -53,32 +53,33 @@ while check == False:
         print("**************************************************************************************************")
 check = False
 while check == False:
-    option = input("Type HAMMER to use it now: ").strip().lower().split()
-    option = "".join(option)
-    option = input("Where would you like to use the hammer? 1. Painting, 2. Shelf, 3. Beanbag, 4. Door, 5. Safe. TYPE THE NUMBER THAT CORRESPONDS WITH THE ACTION. DO NOT INCLUDE A PERIOD.").strip().lower().split()
-    option = "".join(option)
-    if option == "1":
+    tool = input("Type HAMMER to use it now: ").strip().lower().split()
+    tool = "".join(tool)
+    hammer = input("Where would you like to use the hammer? 1. Painting, 2. Shelf, 3. Beanbag, 4. Door, 5. Safe. TYPE THE NUMBER THAT CORRESPONDS WITH THE ACTION. DO NOT INCLUDE A PERIOD.").strip().lower().split()
+    hammer = "".join(hammer)
+    if hammer == "1":
             print("You use the hammer on the painting. It breaks apart and reveals a huge hole on the other side.")
             print("You step in the hole and find a ladder and a pouch that can be used for invitory.")
             print("You look on the wall and see words that say: THERE IS NO ESCAPE!!!")
             print("**************************************************************************************************")
             check = True
-    elif option == "2":
+
+    elif hammer == "2":
             print("You try and use your hammer on the shelf but it's too high up to use.")
             print("**************************************************************************************************")
 
-    elif option == "3":
+    elif hammer == "3":
             print("You already searched the beanbag enough. It's usless now.")
             print("**************************************************************************************************")
 
-    elif option == "4":
+    elif hammer == "4":
             print("The door is made with a hard steel.")
             print("You try and use the hammer on the door, but it's not very effective. It didn't make a dent in it.")
             print("You feel stupid because you have been playing Pokemon for 67 years now.")
             print("You should have known that steel is not very effective onto steel types or objects.")
             print("**************************************************************************************************")
 
-    elif option == "5":
+    elif hammer == "5":
             print("You try and use the hammer on the safe. It does nothing to it.")
             print("**************************************************************************************************")
 
@@ -87,11 +88,14 @@ while check == False:
             print("Please try again later.")
             print("**************************************************************************************************")
 Invitory = ["Ladder"]
+
 check = False
 while check == False:
     print("You add the Ladder to your invitory. What do you do now?")
     print("1. Check the painting. 2. Check the Shelf. 3. Check the beanbag. 4. Check the Door. 5. Check the Safe. 6. Open Invintory")
-    print("Enter the number that corresponds to the action. Remember, don't type periods.")
+    option = input("Enter the number that corresponds to the action. Remember, don't type periods.")
+    print("**************************************************************************************************")
+
     if option == "1":
         print("You already inspected the painting. There is nothing to do here besides looking at that message on the wall.")
         print("The message says: THERE IS NO ESCAPE!!!")
@@ -103,8 +107,8 @@ while check == False:
         option == "".join(option)
         print("**************************************************************************************************")
         if option == "yes":
-            option = input("Please choose an item from your invintory to use.")
             print(Invitory)
+            option = input("Please choose an item from your invintory to use.")
             if option == "ladder":
                 print("You used the ladder to climb up the shelf. You see something and add it to your invintory")
                 print("You added a code to the invontory")
