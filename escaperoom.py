@@ -63,6 +63,7 @@ while check == False:
             print("You look on the wall and see words that say: THERE IS NO ESCAPE!!!")
             print("**************************************************************************************************")
             check = True
+    elif option == "2":
             print("You try and use your hammer on the shelf but it's too high up to use.")
             print("**************************************************************************************************")
 
