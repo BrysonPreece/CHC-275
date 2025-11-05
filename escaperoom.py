@@ -82,11 +82,10 @@ while check == False:
     elif hammer == "5":
             print("You try and use the hammer on the safe. It does nothing to it.")
             print("**************************************************************************************************")
-
-    else:
-            print("The action you wish to do does not compute with our system.")
-            print("Please try again later.")
-            print("**************************************************************************************************")
+else:
+        print("The action you wish to do does not compute with our system.")
+        print("Please try again later.")
+        print("**************************************************************************************************")
 Invitory = ["Ladder"]
 
 check = False
