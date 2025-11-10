@@ -20,8 +20,7 @@ while check == False:
 
 check = False
 while check == False:
-    option = input("1. Investigate the safe, 2. Investigate the shelf, 3. Investigate the beanbag, 4. Investigate the painting. 5. Investigate the door.").strip().lower().split()
-    option = "".join(option)
+    option = input("1. Investigate the safe, 2. Investigate the shelf, 3. Investigate the beanbag, 4. Investigate the painting. 5. Investigate the door.").strip().lower()
     print("TYPE THE NUMBER THAT CORRESPONDS TO THE ACTION. DO NOT INCLUDE A PERIOD")
     print("**************************************************************************************************")
     if option == "1":
