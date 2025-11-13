@@ -14,16 +14,16 @@ print(f"{MSFT}\n{AMZN}\n{NVDA}")
 
 try:
     for i in range(len(MSFT)):
-        if MSFT[1].isnumeric():
-            MSFT[1] = int(MSFT[i])
+        if MSFT[i].isnumeric():
+            MSFT[i] = int(MSFT[i])
             MSFTsum = MSFTsum + MSFT[i]
     for i in range(len(AMZN)):
-        if AMZN[1].isnumeric():
-            AMZN[1] = int(AMZN[i])
+        if AMZN[i].isnumeric():
+            AMZN[i] = int(AMZN[i])
             AMZNsum = AMZNsum + AMZN[i]
     for i in range(len(NVDA)):
-        if NVDA[1].isnumeric():
-            NVDA[1] = int(NVDA[i])
+        if NVDA[i].isnumeric():
+            NVDA[i] = int(NVDA[i])
             NVDAsum = NVDAsum + NVDA[i]
 except Exception as e:
     print(f"An error has risen. Womp Womp.{e}")
@@ -51,16 +51,16 @@ print(f"{MSFT21_40}\n{AMZN21_40}\n{NVDA21_40}")
 
 try:
     for i in range(len(MSFT21_40)):
-        if MSFT21_40[1].isnumeric():
-            MSFT21_40[1] = int(MSFT21_40[i])
+        if MSFT21_40[i].isnumeric():
+            MSFT21_40[i] = int(MSFT21_40[i])
             MSFTsum21_40 = MSFTsum21_40 + MSFT21_40[i]
     for i in range(len(AMZN21_40)):
-        if AMZN21_40[1].isnumeric():
-            AMZN21_40[1] = int(AMZN21_40[i])
+        if AMZN21_40[i].isnumeric():
+            AMZN21_40[i] = int(AMZN21_40[i])
             AMZNsum21_40 = AMZNsum21_40 + AMZN21_40[i]
     for i in range(len(NVDA21_40)):
-        if NVDA21_40[1].isnumeric():
-            NVDA21_40[1] = int(NVDA21_40[i])
+        if NVDA21_40[i].isnumeric():
+            NVDA21_40[i] = int(NVDA21_40[i])
             NVDAsum21_40 = NVDAsum21_40 + NVDA21_40[i]
 except Exception as e:
     print(f"An error has risen. Womp Womp.{e}")
@@ -72,17 +72,17 @@ else:
 
 try:
     buys=[]
-    if MSFT < MSFTavg21_40 and AMZN < AMZNavg21_40 and NVDA < NVDAavg21_40:
+    if MSFTavg < MSFTavg21_40 and AMZNavg < AMZNavg21_40 and NVDAavg < NVDAavg21_40:
         buys.append("MSFT")
         buys.append("AMZN")
         buys.append("NVDA")
-    elif MSFT < MSFTavg21_40 and AMZN < AMZNavg21_40:
+    elif MSFTavg < MSFTavg21_40 and AMZNavg < AMZNavg21_40:
         buys.append("MSFT")
         buys.append("AMZN")
-    elif MSFT < MSFTavg21_40 and NVDA < NVDAavg21_40:
+    elif MSFTavg < MSFTavg21_40 and NVDAavg < NVDAavg21_40:
         buys.append("MSFT")
         buys.append("NVDA")
-    elif NVDA < NVDAavg21_40 and AMZN < AMZNavg21_40:
+    elif NVDAavg < NVDAavg21_40 and AMZNavg < AMZNavg21_40:
         buys.append("NVDA")
         buys.append("AMZN")
     print(f"Stocks you should buy: {buys}")
