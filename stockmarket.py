@@ -3,31 +3,95 @@ buffer1_40 = file.readlines()
 print(buffer1_40)
 file.close()
 
-MFST = (buffer1_40[0]).strip().split(", ")
-AMSN = (buffer1_40[1]).strip().split(", ")
+MSFT = (buffer1_40[0]).strip().split(", ")
+AMZN = (buffer1_40[1]).strip().split(", ")
 NVDA = (buffer1_40[2]).strip().split(", ")
-MFSTsum = 0
-AMSNsum = 0
+MSFTsum = 0
+AMZNsum = 0
 NVDAsum = 0
 
-print(f"{MFST}\n{AMSN}\n{NVDA}")
+print(f"{MSFT}\n{AMZN}\n{NVDA}")
 
 try:
-    for i in range(len(MFST)):
-        if MFST[1].isnumeric():
-            MFST[1] = int(MFST[1])
-    for i in range(len(AMSN)):
-        if AMSN[1].isnumeric():
-            AMSN[1] = int(AMSN[1])
-    for i in range(len(MFST)):
+    for i in range(len(MSFT)):
+        if MSFT[1].isnumeric():
+            MSFT[1] = int(MSFT[i])
+            MSFTsum = MSFTsum + MSFT[i]
+    for i in range(len(AMZN)):
+        if AMZN[1].isnumeric():
+            AMZN[1] = int(AMZN[i])
+            AMZNsum = AMZNsum + AMZN[i]
+    for i in range(len(NVDA)):
         if NVDA[1].isnumeric():
-            NVDA[1] = int(NVDA[1])
-            
+            NVDA[1] = int(NVDA[i])
+            NVDAsum = NVDAsum + NVDA[i]
 except Exception as e:
     print(f"An error has risen. Womp Womp.{e}")
 else:
-    MFSTsum = MFSTsum/len(MFST)
-    AMSNsum = AMSNsum/len(AMSN)
-    NVDAsum = NVDAsum/len(NVDA)
-print(f"Here are the averages for days 1-20 for MFST {MFSTsum}, AMSN {AMSNsum}, and NVDA {NVDAsum}.")
+    MSFTavg = MSFTsum/len(MSFT)
+    AMZNavg = AMZNsum/len(AMZN)
+    NVDAavg = NVDAsum/len(NVDA)
+    print(f"Here are the averages for days 1-20 for MSFT {MSFTavg}, AMZN {AMZNavg}, and NVDA {NVDAavg}.")
+
+
+
+file = open("days21-40.txt", "r")
+buffer21_40 = file.readlines()
+print(buffer21_40)
+file.close()
+
+MSFT21_40 = (buffer21_40[0]).strip().split(", ")
+AMZN21_40 = (buffer21_40[1]).strip().split(", ")
+NVDA21_40 = (buffer21_40[2]).strip().split(", ")
+MSFTsum21_40 = 0
+AMZNsum21_40 = 0
+NVDAsum21_40 = 0
+
+print(f"{MSFT21_40}\n{AMZN21_40}\n{NVDA21_40}")
+
+try:
+    for i in range(len(MSFT21_40)):
+        if MSFT21_40[1].isnumeric():
+            MSFT21_40[1] = int(MSFT21_40[i])
+            MSFTsum21_40 = MSFTsum21_40 + MSFT21_40[i]
+    for i in range(len(AMZN21_40)):
+        if AMZN21_40[1].isnumeric():
+            AMZN21_40[1] = int(AMZN21_40[i])
+            AMZNsum21_40 = AMZNsum21_40 + AMZN21_40[i]
+    for i in range(len(NVDA21_40)):
+        if NVDA21_40[1].isnumeric():
+            NVDA21_40[1] = int(NVDA21_40[i])
+            NVDAsum21_40 = NVDAsum21_40 + NVDA21_40[i]
+except Exception as e:
+    print(f"An error has risen. Womp Womp.{e}")
+else:
+    MSFTavg21_40 = MSFTsum/len(MSFT21_40)
+    AMZNavg21_40 = AMZNsum/len(AMZN21_40)
+    NVDAavg21_40 = NVDAsum/len(NVDA21_40)
+    print(f"Here are the averages for days 1-20 for MFST {MSFTavg21_40}, AMSN {AMZNavg21_40}, and NVDA {NVDAavg21_40}.")
+
+try:
+    buys=[]
+    if MSFT < MSFTavg21_40 and AMZN < AMZNavg21_40 and NVDA < NVDAavg21_40:
+        buys.append("MSFT")
+        buys.append("AMZN")
+        buys.append("NVDA")
+    elif MSFT < MSFTavg21_40 and AMZN < AMZNavg21_40:
+        buys.append("MSFT")
+        buys.append("AMZN")
+    elif MSFT < MSFTavg21_40 and NVDA < NVDAavg21_40:
+        buys.append("MSFT")
+        buys.append("NVDA")
+    elif NVDA < NVDAavg21_40 and AMZN < AMZNavg21_40:
+        buys.append("NVDA")
+        buys.append("AMZN")
+    print(f"Stocks you should buy: {buys}")
+    file = open("buys.txt", "w")
+    file.writelines(buys)
+    file.close()
+
+except Exception as e:
+    print(e)
+
+
 
