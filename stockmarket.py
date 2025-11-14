@@ -1,11 +1,11 @@
 file = open("days1-20.txt", "r")
-buffer1_40 = file.readlines()
-print(buffer1_40)
+buffer1_20 = file.readlines()
+print(buffer1_20)
 file.close()
 
-MSFT = (buffer1_40[0]).strip().split(", ")
-AMZN = (buffer1_40[1]).strip().split(", ")
-NVDA = (buffer1_40[2]).strip().split(", ")
+MSFT = (buffer1_20[0]).strip().split(", ")
+AMZN = (buffer1_20[1]).strip().split(", ")
+NVDA = (buffer1_20[2]).strip().split(", ")
 MSFTsum = 0
 AMZNsum = 0
 NVDAsum = 0
@@ -65,9 +65,9 @@ try:
 except Exception as e:
     print(f"An error has risen. Womp Womp.{e}")
 else:
-    MSFTavg21_40 = MSFTsum/len(MSFT21_40)
-    AMZNavg21_40 = AMZNsum/len(AMZN21_40)
-    NVDAavg21_40 = NVDAsum/len(NVDA21_40)
+    MSFTavg21_40 = MSFTsum21_40/len(MSFT21_40)
+    AMZNavg21_40 = AMZNsum21_40/len(AMZN21_40)
+    NVDAavg21_40 = NVDAsum21_40/len(NVDA21_40)
     print(f"Here are the averages for days 1-20 for MFST {MSFTavg21_40}, AMSN {AMZNavg21_40}, and NVDA {NVDAavg21_40}.")
 
 try:
