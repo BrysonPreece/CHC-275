@@ -46,10 +46,7 @@ while check == False:
         print("You think about hitting the gym more.")
         print("**************************************************************************************************")
     else:
-        print("You hear a voice. It sounds like Professor Oak from Pokemon.")
-        print("It looks like he is saying something to you.")
-        print("There is a time and place for everything, but not now.")
-        print("**************************************************************************************************")
+        print("That is not an option that you can do")
 check = False
 while check == False:
     tool = input("Type HAMMER to use it now: ").strip().lower().split()
@@ -99,48 +96,48 @@ Invitory = ["Ladder"]
 
 check = False
 while check == False:
-    print("You add the Ladder to your invitory. What do you do now?")
-    print("1. Check the painting. 2. Check the Shelf. 3. Check the beanbag. 4. Check the Door. 5. Check the Safe. 6. Open Invintory")
-    option = input("Enter the number that corresponds to the action. Remember, don't type periods.")
-    print("**************************************************************************************************")
-
-    if option == "1":
-        print("You already inspected the painting. There is nothing to do here besides looking at that message on the wall.")
-        print("The message says: THERE IS NO ESCAPE!!!")
+        print("You add the Ladder to your invitory. What do you do now?")
+        print("1. Check the painting. 2. Check the Shelf. 3. Check the beanbag. 4. Check the Door. 5. Check the Safe. 6. Open Invintory")
+        option = input("Enter the number that corresponds to the action. Remember, don't type periods.")
         print("**************************************************************************************************")
 
-    elif option == "2":
-        print("The shelf is too high up to reach. You can reach whatever is up there with an object.")
-    check = False
-    while check == False:
-        option = input("Would you like to use an item from your invintory? Type Yes or No").strip().lower().split()
-        option == "".join(option)
-        print("**************************************************************************************************")
-        if option == "Yes":
-            print(Invitory)
-            option = input("Please choose an item from your invintory to use.")
-        if option == "ladder":
-            print("You used the ladder to climb up the shelf. You see something and add it to your invintory")
-            print("You added a code to the invontory")
-            print("**************************************************************************************************")
-            check = True
-        elif option == "No":
-            print("Ok")
-                
-        elif option == "3":
-            print("The beanbag has already been inspected.")
+        if option == "1":
+            print("You already inspected the painting. There is nothing to do here besides looking at that message on the wall.")
+            print("The message says: THERE IS NO ESCAPE!!!")
             print("**************************************************************************************************")
 
-        elif option == "4":
-            print("The door is made of steel. It won't budge without a key.")
+        elif option == "2":
+            print("The shelf is too high up to reach. You can reach whatever is up there with an object.")
+        check = False
+        while check == False:
+            option = input("Would you like to use an item from your invintory? Type Yes or No").strip().lower().split()
+            option == "".join(option)
             print("**************************************************************************************************")
+            if option == "Yes":
+                print(Invitory)
+                option = input("Please choose an item from your invintory to use.")
+            if option == "ladder":
+                print("You used the ladder to climb up the shelf. You see something and add it to your invintory")
+                print("You added a code to the invontory")
+                print("**************************************************************************************************")
+                check = True
+            elif option == "No":
+                print("Ok")
+                    
+            elif option == "3":
+                print("The beanbag has already been inspected.")
+                print("**************************************************************************************************")
 
-        elif option == "5":
-            print("The safe is locked. You need a code to open it.")
-            print("**************************************************************************************************")
+            elif option == "4":
+                print("The door is made of steel. It won't budge without a key.")
+                print("**************************************************************************************************")
 
-        elif option == "6":
-            print (Invitory)
-            print("**************************************************************************************************")
-        else:
-            print("That is not an object that you can use in your invintory")
+            elif option == "5":
+                print("The safe is locked. You need a code to open it.")
+                print("**************************************************************************************************")
+
+            elif option == "6":
+                print (Invitory)
+                print("**************************************************************************************************")
+            else:
+                print("That is not an object that you can use in your invintory")
