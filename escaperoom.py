@@ -40,6 +40,8 @@ while check == False:
     elif option == "4":
         print("You Investigate the painting. It shows a picture of an old man.")
         print ("It reminds you of the book The Old Man and The Sea that you read in high school in your freshman year.")
+        print("**************************************************************************************************")
+
     elif option == "5":
         print ("You investigate the door. It is a metal door that can't be broken.")
         print("You try pulling and pushing the door, but it won't budge.")
@@ -65,7 +67,7 @@ while check == False:
     option = "".join(option)
     if option == "1":
             print("You use the hammer on the painting. It breaks apart and reveals a huge hole on the other side.")
-            print("You step in the hole and find a ladder and a pouch that can be used for invitory.")
+            print("You step in the hole and find a ladder and a pouch that can be used for inventory.")
             print("You look on the wall and see words that say: THERE IS NO ESCAPE!!!")
             print("**************************************************************************************************")
             check = True
@@ -92,12 +94,12 @@ while check == False:
         print("The action you wish to do does not compute with our system.")
         print("Please try again later.")
         print("**************************************************************************************************")
-Invitory = ["Ladder"]
+Inventory = ["Ladder"]
 
 check = False
 while check == False:
-        print("You add the Ladder to your invitory. What do you do now?")
-        print("1. Check the painting. 2. Check the Shelf. 3. Check the beanbag. 4. Check the Door. 5. Check the Safe. 6. Open Invintory")
+        print("You add the Ladder to your inventory. What do you do now?")
+        print("1. Check the painting. 2. Check the Shelf. 3. Check the beanbag. 4. Check the Door. 5. Check the Safe. 6. Open Inventory")
         option = input("Enter the number that corresponds to the action. Remember, don't type periods.")
         print("**************************************************************************************************")
 
@@ -122,26 +124,34 @@ while check == False:
             print("**************************************************************************************************")
 
         elif option == "6":
-            print (Invitory)
+            print (Inventory)
             print("**************************************************************************************************")
         else:
-            print("That is not an object that you can use in your invintory")
+            print("That is not an object that you can use in your inventory")
             print("**************************************************************************************************")
 check = False
 while check == False:
-    option = input ("Would you like to use an object to go up the shelf? Type Yes or no").strip().lower().split()
+    option = input ("Would you like to use an object to go up the shelf? (Y or N?)").strip().lower().split()
     option = "".join(option)
-    if option == "Yes":
-        check = True
-    elif option == "No":
-        print("NOOOOOOOOOO")
+    if option == "Y":
+        print("Ok :) ")
         print("**************************************************************************************************")
+        check = True
+    elif option == "N":
+        print("Too bad")
+        print("**************************************************************************************************")
+
 check = False
 while check == False:
-    print(Invitory)
-    option = input ("What object in your invintory would you like to use to climb up the shelf?").strip().lower().split()
+    print(Inventory)
+    option = input ("What object in your inventory would you like to use to climb up the shelf?").strip().lower().split()
     option = "".join(option)
     if option == "Ladder":
+        print ("You used the ladder to climb up the shelf. It looks like you got something.")
+        print("You used the ladder and now it is gone from your inventory")
+        print("You added a code to your inventory.")
+        Inventory = ["Code"]
+        print(Inventory)
         check = True
     else:
-        print("That is ")
+        print("That is not an action you can do at this time.")
