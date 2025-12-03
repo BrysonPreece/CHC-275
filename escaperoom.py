@@ -6,7 +6,7 @@ print("*************************************************************************
 
 check = False
 while check == False:
-    option = input("You look around the room. You see a knife on the floor. Press P to pick up the knife. ").strip().lower()
+    option = input("You look around the room. You see a knife on the floor. Press P to pick up the knife. : ").strip().lower()
     if option == "p":
         print("**************************************************************************************************")
         print("You picked up the knife to cut the rope. You are now free to move around the room.")
@@ -20,7 +20,7 @@ while check == False:
 
 check = False
 while check == False:
-    option = input("1. Investigate the safe, 2. Investigate the shelf, 3. Investigate the beanbag, 4. Investigate the painting. 5. Investigate the door.").strip().lower()
+    option = input("1. Investigate the safe, 2. Investigate the shelf, 3. Investigate the beanbag, 4. Investigate the painting. 5. Investigate the door. : ").strip().lower()
     print("TYPE THE NUMBER THAT CORRESPONDS TO THE ACTION. DO NOT INCLUDE A PERIOD")
     print("**************************************************************************************************")
     if option == "1":
@@ -63,7 +63,7 @@ while check == False:
 
 check = False
 while check == False:
-    option = input("Where would you like to use the hammer? 1. Painting, 2. Shelf, 3. Beanbag, 4. Door, 5. Safe. TYPE THE NUMBER THAT CORRESPONDS WITH THE ACTION. DO NOT INCLUDE A PERIOD.").strip().lower().split()
+    option = input("Where would you like to use the hammer? 1. Painting, 2. Shelf, 3. Beanbag, 4. Door, 5. Safe. TYPE THE NUMBER THAT CORRESPONDS WITH THE ACTION. DO NOT INCLUDE A PERIOD. : ").strip().lower().split()
     option = "".join(option)
     if option == "1":
             print("You use the hammer on the painting. It breaks apart and reveals a huge hole on the other side.")
@@ -100,7 +100,7 @@ check = False
 while check == False:
         print("You add the Ladder to your inventory. What do you do now?")
         print("1. Check the painting. 2. Check the Shelf. 3. Check the beanbag. 4. Check the Door. 5. Check the Safe. 6. Open Inventory")
-        option = input("Enter the number that corresponds to the action. Remember, don't type periods.")
+        option = input("Enter the number that corresponds to the action. Remember, don't type periods. : ")
         print("**************************************************************************************************")
 
         if option == "1":
@@ -131,7 +131,7 @@ while check == False:
             print("**************************************************************************************************")
 check = False
 while check == False:
-        option = input("Would you like to use an object from your inventory to climb up the shelf? (Y or N?)")
+        option = input("Would you like to use an object from your inventory to climb up the shelf? (Y or N?) : ")
         print("**************************************************************************************************")
 
         if option == "Y":
@@ -146,21 +146,95 @@ while check == False:
 check = False
 while check == False:
     print(Inventory)
-    option = input ("What object in your inventory would you like to use to climb up the shelf?").strip().lower().split()
+    option = input ("What object in your inventory would you like to use to climb up the shelf? : ").strip().lower().split()
     option = "".join(option)
 
     if option == "ladder":
         print("You used the ladder to climb up the shelf. It looks like there is something shiny on the shelf.")
         print("You picked up a code on the shelf")
         print("You added code to your inventory and removed Ladder from your inventory")
-        Inventory = ["Code"]
+        Inventory.append("Code")
+        Inventory.remove("Ladder")
         print(Inventory)
         print("**************************************************************************************************")
         check = True
-    elif option == "":
-        print("Not a thing in your inventory")
-        print("**************************************************************************************************")
 
     else:
         print("Action does not compute with our system")
         print("**************************************************************************************************")
+
+check = False
+while check == False:
+    print("You have now inserted the code into your inventory.")
+    print("You feel like you are almost out of here")
+    print("TYPE THE NUMBER THAT CORRESPONDS TO THE ACTION. DO NOT INCLUDE A PERIOD")
+    print("**************************************************************************************************")
+    option = input("1. Investigate the safe, 2. Investigate the shelf, 3. Investigate the beanbag, 4. Investigate the painting. 5. Investigate the door. : ").strip().lower()
+    print("**************************************************************************************************")
+    if option == "1":
+        print("**************************************************************************************************")
+        print("You investigate the safe. A combination is needed to unlock it.")
+        print("**************************************************************************************************")
+        check = True
+    elif option == "2":
+        print("**************************************************************************************************")
+        print("You already investigated the shelf already.")
+        print("**************************************************************************************************")
+    elif option == "3":
+        print("**************************************************************************************************")
+        print("You already investigated the beanbag.")
+        print("**************************************************************************************************")
+    elif option == "4":
+        print("You already investigated the painting already.")
+        print("**************************************************************************************************")
+
+    elif option == "5":
+        print ("You investigate the door. It is a metal door that can't be broken.")
+        print("You try pulling and pushing the door, but it won't budge.")
+        print("You think about hitting the gym more.")
+        print("**************************************************************************************************")
+    else:
+        print("That is not an option that you can do")
+
+check = False
+while check == False:
+    print("**************************************************************************************************")
+    print("It seems the code has some writing on it")
+    print("It says the following: ")
+    print("**************************************************************************************************")
+    print("H3llo. I'm writing to you about this mysterious man on the train. This man is very dangerous ... 2 dangerous")
+    print("If you are reading this c0de, you should escape as soon as possible. There is not much time left.")
+    print("U6e this code on the safe to unlock it. I believe in you.")
+    print("The code is seven digits long, luckly this message incluides some hints, if you can find them ...")
+    print("7ust enter the seven digits into the safe, and that should unlock it.")
+    print("You got this!1!")
+    print("I b5lieve in you")
+    print("From - Dr. M")
+    print("**************************************************************************************************")
+    print("Please enter the seven digits into the safe. Look at the code for clues")
+    print("**************************************************************************************************")
+
+    try:
+        a = input("Enter number one")
+        b = input("Enter number two")
+        c = input("Enter number three")
+        d = input("Enter number four")
+        e = input("Enter number five")
+        f = input("Enter number six")
+        g = input("Enter number seven")
+        a = int(a)
+        b = int(b)
+        c = int(c)
+        d = int(d)
+        e = int(e)
+        f = int(f)
+        g = int(g)
+        a = 7
+        b = 2
+        c = 0
+        d = 6
+        e = 7
+        f = 1
+        g = 5
+    except ValueError:
+        print("Sorry. Wrong number or can't input that into the safe!!!")
