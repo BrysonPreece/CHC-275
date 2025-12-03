@@ -149,19 +149,18 @@ while check == False:
     option = input ("What object in your inventory would you like to use to climb up the shelf?").strip().lower().split()
     option = "".join(option)
 
-    if option == "Ladder":
-                print("You used the ladder to climb up the shelf. It looks like there is something shiny on the shelf.")
-                print("You picked up a code on the shelf")
-                print("You added code to your inventory and removed Ladder from your inventory")
-                Inventory.append("Code")
-                Inventory.pop("Ladder")
-                print(Inventory)
-                print("**************************************************************************************************")
-                check = True
+    if option == "ladder":
+        print("You used the ladder to climb up the shelf. It looks like there is something shiny on the shelf.")
+        print("You picked up a code on the shelf")
+        print("You added code to your inventory and removed Ladder from your inventory")
+        Inventory = ["Code"]
+        print(Inventory)
+        print("**************************************************************************************************")
+        check = True
     elif option == "":
-            print("Not a thing in your inventory")
-            print("**************************************************************************************************")
+        print("Not a thing in your inventory")
+        print("**************************************************************************************************")
 
     else:
-            print("Action does not compute with our system")
-            print("**************************************************************************************************")
+        print("Action does not compute with our system")
+        print("**************************************************************************************************")
