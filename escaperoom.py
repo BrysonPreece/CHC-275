@@ -213,83 +213,75 @@ while check == False:
     print("**************************************************************************************************")
     print("Please enter the seven digits into the safe. Look at the code for clues")
     print("**************************************************************************************************")
-    a = input ("Enter number 1 : ")
-    b = input ("Enter number 2 : ")
-    c = input ("Enter number 3 : ")
-    d = input ("Enter number 4 : ")
-    e = input ("Enter number 5 : ")
-    f = input ("Enter number 6 : ")
-    g = input ("Enter number 7 : ")
-
     check = True
-    try:
-        if a == 7:
-             print("Correct")
-             check = True
-        
-        else:
-             print("Wrong number")
-             print("**************************************************************************************************")
-
-        if b == 2:
-             check = True
-             print("Correct")
-        else:
-             print("Wrong number")
-             print("**************************************************************************************************")
-
-        if c == 0:
-            check = True
-            print("Correct")
-
-        else:
-             print("Wrong number")
-             print("**************************************************************************************************")
-     
-        if d == 6:
-            print("Correct")
-            check = True
-        else:
-             print("Wrong number")
-             print("**************************************************************************************************")
-
-        if e == 7:
-            print("Correct")
-            check = True
-        else:
-             print("Wrong number")
-             print("**************************************************************************************************")
-
-        if f == 1:
-            print("Correct")
-            check = True
-        else:
-             print("Wrong number")
-             print("**************************************************************************************************")
-
-        if g == 5:
-            print("Correct")
-            check = True
-        else:
-             print("Wrong number")
-             print("**************************************************************************************************")
-        a = int(a)
-        b = int(b)
-        c = int(c)
-        d = int(d)
-        e = int(e)
-        f = int(f)
-        g = int(g)
-
-    except TypeError:
-        print("Sorry. Can't input that into the safe!!!")
-    except Exception as e:
-         print(e)
-    finally:
-         print("Thanks for using the safe")
-    code = [7,2,0,6,7,1,5]
-    if code == [7,2,0,6,7,1,5]:
-         print("Excellent job!!!")
+check = False
+while check == False:
+    a = input ("Enter number 1 : ")
+    if a == "3":
+        print("Correct")
+        check = True
     else:
-         print("Sorry")
-         print("**************************************************************************************************")
+         print("Wrong Number")
+check = False
+while check == False:
+    b = input ("Enter number 2 : ")
+    if b == "2":
+         print ("Correct")
+         check = True
+    else:
+         print("Wrong Number")
+check = False
+while check == False:
+    c = input ("Enter number 3 : ")
+    if c == "0":
+         print("Correct")
+         check = True
+    else:
+         print("Wrong Number")
+check = False
+while check == False:
+    d = input ("Enter number 4 : ")
+    if d == "6":
+         print("Correct")
+         check = True
+    else:
+         print("Wrong Number")
+check = False
+while check == False:
+    e = input ("Enter number 5 : ")
+    if e == "7":
+         print("Correct")
+         check = True
+    else:
+         print("Wrong Number")
+check = False
+while check == False:
+    f = input ("Enter number 6 : ")
+    if f == "1":
+         print("Correct")
+         check = True
+    else:
+         print("Wrong Number")
+check = False
+while check == False:
+    g = input ("Enter number 7 : ")
+    if g == "5":
+         print("Correct")
+         check = True
+    else:
+         print("Wrong Number")
+    a = int(a)
+    b = int(b)
+    c = int(c)
+    d = int(d)
+    e = int(e)
+    f = int(f)
+    g = int(g)
+    code = [7, 2, 0, 6, 7, 1, 5]
+print (f"You typed in {code} into the safe")
+print("The safe opened and you grabbed a key inside")
+print("You added the key to your inventory and removed the code from your inventory")
+Inventory.append("Key")
+Inventory.remove("Code")
+print(Inventory)
+print("**************************************************************************************************")
