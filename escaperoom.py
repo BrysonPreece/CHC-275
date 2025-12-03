@@ -131,27 +131,37 @@ while check == False:
             print("**************************************************************************************************")
 check = False
 while check == False:
-    option = input ("Would you like to use an object to go up the shelf? (Y or N?)").strip().lower().split()
-    option = "".join(option)
-    if option == "Y":
-        print("Ok :) ")
+        option = input("Would you like to use an object from your inventory to climb up the shelf? (Y or N?)")
         print("**************************************************************************************************")
-        check = True
-    elif option == "N":
-        print("Too bad")
-        print("**************************************************************************************************")
+
+        if option == "Y":
+            print("ok")
+            print("**************************************************************************************************")
+            check = True
+        elif option == "N":
+            print("Too bad")
+            print("**************************************************************************************************")
+
 
 check = False
 while check == False:
     print(Inventory)
     option = input ("What object in your inventory would you like to use to climb up the shelf?").strip().lower().split()
     option = "".join(option)
+
     if option == "Ladder":
-        print ("You used the ladder to climb up the shelf. It looks like you got something.")
-        print("You used the ladder and now it is gone from your inventory")
-        print("You added a code to your inventory.")
-        Inventory = ["Code"]
-        print(Inventory)
-        check = True
+                print("You used the ladder to climb up the shelf. It looks like there is something shiny on the shelf.")
+                print("You picked up a code on the shelf")
+                print("You added code to your inventory and removed Ladder from your inventory")
+                Inventory.append("Code")
+                Inventory.pop("Ladder")
+                print(Inventory)
+                print("**************************************************************************************************")
+                check = True
+    elif option == "":
+            print("Not a thing in your inventory")
+            print("**************************************************************************************************")
+
     else:
-        print("That is not an action you can do at this time.")
+            print("Action does not compute with our system")
+            print("**************************************************************************************************")
