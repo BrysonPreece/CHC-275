@@ -293,4 +293,9 @@ print("You feel unconscious and fall asleep")
 print("**************************************************************************************************")
 check = False
 while check == False:
-    option = input ("Type W to wake up : ")
+    option = input ("Type W to wake up : ").strip().upper().split()
+    option = "".join(option)
+    if option == "W":
+         print("You woke up shocked as you looked around the room")
+         print("You woke up in the basement of the train")
+         print("There is a trapdoor that leads to")
