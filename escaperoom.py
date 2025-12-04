@@ -285,3 +285,12 @@ Inventory.append("Key")
 Inventory.remove("Code")
 print(Inventory)
 print("**************************************************************************************************")
+
+print("**************************************************************************************************")
+print("You hear a laugh in the distance")
+print("A mysterious poison gas fills the room")
+print("You feel unconscious and fall asleep")
+print("**************************************************************************************************")
+check = False
+while check == False:
+    option = input ("Type W to wake up : ")
