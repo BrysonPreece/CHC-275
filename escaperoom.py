@@ -297,9 +297,10 @@ while check == False:
     option = "".join(option)
     if option == "W":
          print("You woke up shocked as you looked around the room")
-         print("You woke up in the basement of the train")
-         print("There is a trapdoor that leads upstairs, but it is locked")
-         print("You see a flashlight on the floor")
+         print("You woke up in another room of the train")
+         print("There is door that leads out of the room but it is locked")
+         print("It is dark and you can't see well")
+         print("You manage see a flashlight on the floor")
          print("**************************************************************************************************")
          check = True
     else:
@@ -317,6 +318,43 @@ while check == False:
           print("You can't be serious ...")
 
 print("Suddenly you hear a voice ... It says the following")
-print("\nWelcome to the basement!")
-print("You must use the calculator to get to the number 67")
-print("You must")
+print("You must unlock the door in order to continue your escape")
+print("You take a look at the lock on the wall")
+print("It is a lock that has letters on it. It looks like you have to spell a word in order to unlock the lock")
+print("**************************************************************************************************")
+
+check = False
+while check == False:
+    print("You look around the room.")
+    print("1. There is a light switch to turn off and on a light in the room")
+    print("2. There is a chair in the room. It looks old and rusty")
+    print("3. As you walk around the room, the floor creeks and makes an interesting sound")
+    print("4. here is also a bookshelf in the room.")
+    print("Type the number thaat corresponds with the action that you want to do")
+    option = input ("What do you want to do? : ")
+    if option == "1":
+        check = True
+    elif option == "2":
+        check = False
+        while check == False:
+            option = input("You investigate the rusty chair. Do you want to place something on it? (Y or N) : ").strip().upper().split()
+            option == "".join(option)
+            if option == "Y":
+                check = False
+                while check == False:
+                    print(Inventory)
+                    option = input("What item from your inventory would you like to place on the chair?")
+                    if option == "Key":
+                        print("You place the key on the chair. Nothing happens")
+                        print("You put the key back into your inventory")
+                    elif option == "Book":
+                        print("You placed the book on the chair. It breaks apart")
+                        print("You discover a note that was hidden on the chair")
+                        print("It says the following:")
+                        print("**************************************************************************************************")
+                        print("If you are reading this, you are almost out of here. A little more to go.")
+                        print("As a reward, I will give you a blacklight feature on your flashlight")
+                        print("Your welcome - Dr. M")
+                        check = True
+                    else:
+                        ("Not an option you can do")
