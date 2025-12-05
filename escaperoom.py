@@ -288,7 +288,7 @@ print("*************************************************************************
 
 print("**************************************************************************************************")
 print("You hear a laugh in the distance")
-print("A mysterious poison gas fills the room")
+print("A mysterious gas fills the room")
 print("You feel unconscious and fall asleep")
 print("**************************************************************************************************")
 check = False
@@ -298,4 +298,25 @@ while check == False:
     if option == "W":
          print("You woke up shocked as you looked around the room")
          print("You woke up in the basement of the train")
-         print("There is a trapdoor that leads to")
+         print("There is a trapdoor that leads upstairs, but it is locked")
+         print("You see a flashlight on the floor")
+         print("**************************************************************************************************")
+         check = True
+    else:
+         print("Why?")
+         print("**************************************************************************************************")
+check = False
+while check == False:
+     option = input("Type F to pick up the flashlight : ").strip().upper().split()
+     option = "".join(option)
+     if option == "F":
+          print("You picked up the flashlight and can now see around the room")
+          print("**************************************************************************************************")
+          check = True
+     else:
+          print("You can't be serious ...")
+
+print("Suddenly you hear a voice ... It says the following")
+print("\nWelcome to the basement!")
+print("You must use the calculator to get to the number 67")
+print("You must")
