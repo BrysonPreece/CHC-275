@@ -329,8 +329,13 @@ while check == False:
     print("1. There is a light switch to turn off and on a light in the room")
     print("2. There is a chair in the room. It looks old and rusty")
     print("3. As you walk around the room, the floor creeks and makes an interesting sound")
-    print("4. here is also a bookshelf in the room.")
+    print("4. There is also a bookshelf in the room.")
     print("Type the number thaat corresponds with the action that you want to do")
+    print("**************************************************************************************************")
+    print("1. Investigate the light switch")
+    print("2. Investigate the chair")
+    print("3. Investigate the floorboards")
+    print("4. Investigate the bookself")
     option = input ("What do you want to do? : ")
     if option == "1":
         check = True
@@ -340,6 +345,7 @@ while check == False:
             option = input("You investigate the rusty chair. Do you want to place something on it? (Y or N) : ").strip().upper().split()
             option == "".join(option)
             if option == "Y":
+                check = True
                 check = False
                 while check == False:
                     print(Inventory)
@@ -358,3 +364,7 @@ while check == False:
                         check = True
                     else:
                         ("Not an option you can do")
+            elif option == "N":
+                 print("Sorry :(")
+    elif option == "3":
+        print("You investigate the floorboards")
