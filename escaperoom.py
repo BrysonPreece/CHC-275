@@ -330,7 +330,7 @@ while check == False:
     print("2. There is a chair in the room. It looks old and rusty")
     print("3. As you walk around the room, the floor creeks and makes an interesting sound")
     print("4. There is also a bookshelf in the room.")
-    print("Type the number thaat corresponds with the action that you want to do")
+    print("Type the number that corresponds with the action that you want to do")
     print("**************************************************************************************************")
     print("1. Investigate the light switch")
     print("2. Investigate the chair")
@@ -338,7 +338,12 @@ while check == False:
     print("4. Investigate the bookself")
     option = input ("What do you want to do? : ")
     if option == "1":
-        check = True
+        option = input("Do you want to flip the light switch? (Y or N) : ").strip().upper().split()
+        option == "".join(option)
+        if option == "Y":
+             print(f"Ok. the light switch has been flipped to {off or on}")
+        elif option == "N":
+             print("Ok")
     elif option == "2":
         check = False
         while check == False:
@@ -360,11 +365,32 @@ while check == False:
                         print("**************************************************************************************************")
                         print("If you are reading this, you are almost out of here. A little more to go.")
                         print("As a reward, I will give you a blacklight feature on your flashlight")
+                        print("Just type blacklight to activate it")
                         print("Your welcome - Dr. M")
                         check = True
                     else:
                         ("Not an option you can do")
             elif option == "N":
                  print("Sorry :(")
+                 print("**************************************************************************************************")
+
+            elif option == "blacklight":
+                 print("Can't do that at this time")
+                 print("**************************************************************************************************")
+
     elif option == "3":
-        print("You investigate the floorboards")
+        print("You get down on your hands and knees to investigate the floorboards")
+        print("You come across a secret compartment on the wall")
+        print("But unfortunately it's locked")
+        print("Maybe there is something which can open it")
+        print(Inventory)
+        option == input("What item from your inventory would you like to use on the secret compartment? Type quit to exit : ").strip().lower().split()
+        option = "".join(option)
+        if option == "key":
+            print("You used the key on the secret compartment")
+            print("It opens and you grab something out of the compartment")
+            print("You recieved a book")
+            print(Inventory)
+            check = True
+        elif option == "blacklight":
+             print("Sorry. Not something you can do at this time")
