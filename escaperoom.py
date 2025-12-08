@@ -1,3 +1,6 @@
+offFlash = True
+onFlash = False
+lightOn = False
 print("Welcome to the Escape Room!!!")
 print("You are traveling in a train traveling to go see your grandparents for Christmas. Suddenly, you get knocked out unexpectedly by a hard object.")
 print("You then fall onto the floor unconscious and you can't remember anything.")
@@ -322,7 +325,6 @@ print("You must unlock the door in order to continue your escape")
 print("You take a look at the lock on the wall")
 print("It is a lock that has letters on it. It looks like you have to spell a word in order to unlock the lock")
 print("**************************************************************************************************")
-
 check = False
 while check == False:
     print("You look around the room.")
@@ -337,39 +339,35 @@ while check == False:
     print("3. Investigate the floorboards")
     print("4. Investigate the bookself")
     option = input ("What do you want to do? : ")
+    offMainLight = True
+    onMainLight = False
     if option == "1":
         option = input("Do you want to flip the light switch? (Y or N) : ").strip().upper().split()
         option == "".join(option)
         if option == "Y":
-             print(f"Ok. the light switch has been flipped to {off or on}")
+            if offMainLight == True:
+                offMainLight = False
+                onMainLight = True
+                lightOn = True
+                print("Light Switch has been switched on")
+            elif onMainLight == True:
+                offMainLight = True
+                onMainLight = False
+                lightOn = False
+                print("Light Switch has been set to off")
         elif option == "N":
              print("Ok")
     elif option == "2":
         check = False
         while check == False:
-            option = input("You investigate the rusty chair. Do you want to place something on it? (Y or N) : ").strip().upper().split()
+            option = input("You investigate the rusty chair. Do you want to investigate the bottom or top of the chair? (B or T?) : ").strip().upper().split()
             option == "".join(option)
-            if option == "Y":
-                check = True
-                check = False
-                while check == False:
-                    print(Inventory)
-                    option = input("What item from your inventory would you like to place on the chair?")
-                    if option == "Key":
-                        print("You place the key on the chair. Nothing happens")
-                        print("You put the key back into your inventory")
-                    elif option == "Book":
-                        print("You placed the book on the chair. It breaks apart")
-                        print("You discover a note that was hidden on the chair")
-                        print("It says the following:")
-                        print("**************************************************************************************************")
-                        print("If you are reading this, you are almost out of here. A little more to go.")
-                        print("As a reward, I will give you a blacklight feature on your flashlight")
-                        print("Just type blacklight to activate it")
-                        print("Your welcome - Dr. M")
-                        check = True
-                    else:
-                        ("Not an option you can do")
+            if option == "B":
+                print("You investigate the bottom of the chair. You find a note on the bottom of the chair")
+                option = input("Press E to interact with the note")
+            elif option == "T":
+                print("You investigate the top of the chair. The seat looks old and rusty")
+                print("")
             elif option == "N":
                  print("Sorry :(")
                  print("**************************************************************************************************")
