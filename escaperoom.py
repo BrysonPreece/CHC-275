@@ -9,8 +9,9 @@ print("*************************************************************************
 
 check = False
 while check == False:
-    option = input("You look around the room. You see a knife on the floor. Press P to pick up the knife. : ").strip().lower()
-    if option == "p":
+    option = input("You look around the room. You see a knife on the floor. Press E to interact. : ").strip().lower().upper()
+    option =="".join(option)
+    if option == "E":
         print("**************************************************************************************************")
         print("You picked up the knife to cut the rope. You are now free to move around the room.")
         print("You look around the room. There is a door with a keyhole. You need a key to escape the Caboose.")
@@ -54,10 +55,10 @@ while check == False:
         print("That is not an option that you can do")
 check = False
 while check == False:
-    tool = input("Type HAMMER to use it now: ").strip().lower().split()
+    tool = input("Type E to use the hammer : ").strip().upper().split()
     tool = "".join(tool)
     print("**************************************************************************************************")
-    if tool == "hammer" or tool == "hammer.":
+    if tool == "E":
         check = True
     else:
         print("That is not an option you can do")
@@ -311,9 +312,9 @@ while check == False:
          print("**************************************************************************************************")
 check = False
 while check == False:
-     option = input("Type F to pick up the flashlight : ").strip().upper().split()
+     option = input("Type E to interact : ").strip().upper().split()
      option = "".join(option)
-     if option == "F":
+     if option == "E":
           print("You picked up the flashlight and can now see around the room")
           print("**************************************************************************************************")
           check = True
