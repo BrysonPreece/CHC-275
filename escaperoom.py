@@ -367,16 +367,14 @@ while check == False:
                 print("You investigate the bottom of the chair. You find a note on the bottom of the chair")
                 option = input("Press E to interact with the note")
             elif option == "T":
-                print("You investigate the top of the chair. The seat looks old and rusty")
-                print("You probably should not sit there.")
-            elif option == "N":
-                 print("Sorry :(")
-                 print("**************************************************************************************************")
+                 print("You investigate the top of the chair. The seat looks old and rusty")
+                 print("You probably should not sit there.")
 
             elif option == "blacklight":
                  print("Can't do that at this time")
                  print("**************************************************************************************************")
-
+            else:
+                 print("Uhhhhh What???")
     elif option == "3":
         print("You get down on your hands and knees to investigate the floorboards")
         print("You come across a secret compartment on the wall")
@@ -396,4 +394,16 @@ while check == False:
     elif option == "4":
          print("You investigate the bookshelf.")
          print("You find a slot where a book should go, but it's empty.")
-         print("")
+         print(Inventory)
+         option = input("Which object in your inventory do you want to use to fill the slot? : ").strip().lower().split()
+         option == "".join(option)
+         if option == "book":
+              print("You put the book in the empty slot in the bookshelf")
+              print("The bookshelf makes a mysterious noise")
+              print("A book falls from the bookshelf onto the floor")
+              option = input("Press E to interact with the book : ")
+              if option == "E":
+                   print("You grabbed the book off of the shelf. The cover says, The Escape.")
+                   print("You open the book to read more, but something falls out of it.")
+                   print("Press E to pick up the item : ")
+                   print("You picked up a master key")
