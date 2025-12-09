@@ -281,7 +281,7 @@ while check == False:
     e = int(e)
     f = int(f)
     g = int(g)
-    code = [7, 2, 0, 6, 7, 1, 5]
+    code = [3,2,0,6,7,1,5]
 print (f"You typed in {code} into the safe")
 print("The safe opened and you grabbed a key inside")
 print("You added the key to your inventory and removed the code from your inventory")
@@ -347,15 +347,15 @@ while check == False:
         option == "".join(option)
         if option == "Y":
             if offMainLight == True:
-                offMainLight = False
-                onMainLight = True
-                lightOn = True
-                print("Light Switch has been switched on")
+               offMainLight = False
+               onMainLight = True
+               lightOn = True
+               print("Light Switch has been switched on")
             elif onMainLight == True:
-                offMainLight = True
-                onMainLight = False
-                lightOn = False
-                print("Light Switch has been set to off")
+                 offMainLight = True
+                 onMainLight = False
+                 lightOn = False
+                 print("Light Switch has been set to off")
         elif option == "N":
              print("Ok")
     elif option == "2":
@@ -368,7 +368,7 @@ while check == False:
                 option = input("Press E to interact with the note")
             elif option == "T":
                 print("You investigate the top of the chair. The seat looks old and rusty")
-                print("")
+                print("You probably should not sit there.")
             elif option == "N":
                  print("Sorry :(")
                  print("**************************************************************************************************")
@@ -393,3 +393,7 @@ while check == False:
             check = True
         elif option == "blacklight":
              print("Sorry. Not something you can do at this time")
+    elif option == "4":
+         print("You investigate the bookshelf.")
+         print("You find a slot where a book should go, but it's empty.")
+         print("")
