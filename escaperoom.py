@@ -326,6 +326,8 @@ print("You must unlock the door in order to continue your escape")
 print("You take a look at the lock on the wall")
 print("It is a lock that has letters on it. It looks like you have to spell a word in order to unlock the lock")
 print("**************************************************************************************************")
+offMainLight = True
+onMainLight = False
 check = False
 while check == False:
     print("You look around the room.")
@@ -338,13 +340,11 @@ while check == False:
     print("1. Investigate the light switch")
     print("2. Investigate the chair")
     print("3. Investigate the floorboards")
-    print("4. Investigate the bookself")
+    print("4. Investigate the bookshelf")
     option = input ("What do you want to do? : ")
-    offMainLight = True
-    onMainLight = False
     if option == "1":
         option = input("Do you want to flip the light switch? (Y or N) : ").strip().upper().split()
-        option == "".join(option)
+        option = "".join(option)
         if option == "Y":
             if offMainLight == True:
                 offMainLight = False
@@ -362,10 +362,17 @@ while check == False:
         check = False
         while check == False:
             option = input("You investigate the rusty chair. Do you want to investigate the bottom or top of the chair? (B or T?) : ").strip().upper().split()
-            option == "".join(option)
+            option = "".join(option)
             if option == "B":
                 print("You investigate the bottom of the chair. You find a note on the bottom of the chair")
                 option = input("Press E to interact with the note")
+                option = "".join(option)
+                if option == "E":
+                     print("You pick up the note and read it. The note says the following : ")
+                     print("**************************************************************************************************")
+                     print("Hello reader, I see that you have found my note.")
+                     print("")
+                check = True
             elif option == "T":
                 print("You investigate the top of the chair. The seat looks old and rusty")
                 print("You probably should not sit there.")
@@ -381,7 +388,7 @@ while check == False:
         print("But unfortunately it's locked")
         print("Maybe there is something which can open it")
         print(Inventory)
-        option == input("What item from your inventory would you like to use on the secret compartment? Type quit to exit : ").strip().lower().split()
+        option = input("What item from your inventory would you like to use on the secret compartment? Type quit to exit : ").strip().lower().split()
         option = "".join(option)
         if option == "key":
             print("You used the key on the secret compartment")
@@ -389,19 +396,18 @@ while check == False:
             print("You recieved a book")
             print(Inventory)
             check = True
-        elif option == "blacklight":
-            print("Sorry. Not something you can do at this time")
     elif option == "4":
         print("You investigate the bookshelf.")
         print("You find a slot where a book should go, but it's empty.")
         print(Inventory)
         option = input("Which object in your inventory do you want to use to fill the slot? : ").strip().lower().split()
-        option == "".join(option)
+        option = "".join(option)
         if option == "book":
             print("You put the book in the empty slot in the bookshelf")
             print("The bookshelf makes a mysterious noise")
             print("A book falls from the bookshelf onto the floor")
-            option = input("Press E to interact with the book : ")
+            option = input("Press E to interact with the book : ").strip().upper().split
+            option ="".join(option)
             if option == "E":
                 print("You grabbed the book off of the shelf. The cover says, The Escape.")
                 print("You open the book to read more, but something falls out of it.")
@@ -413,3 +419,5 @@ while check == False:
                 print("Bruh...")
         else:
             print("Bruh...")
+    else:
+        print("Bruh...")
