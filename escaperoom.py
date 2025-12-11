@@ -1,6 +1,7 @@
 offFlash = True
 onFlash = False
 lightOn = False
+code1 = ["N0E$CAP3"]
 print("Welcome to the Escape Room!!!")
 print("You are traveling in a train traveling to go see your grandparents for Christmas. Suddenly, you get knocked out unexpectedly by a hard object.")
 print("You then fall onto the floor unconscious and you can't remember anything.")
@@ -357,11 +358,14 @@ while check == False:
                 onMainLight = True
                 lightOn = True
                 print("Light Switch has been switched on")
+                print("**************************************************************************************************")
+
             elif onMainLight == True:
                 offMainLight = True
                 onMainLight = False
                 lightOn = False
                 print("Light Switch has been set to off")
+                print("**************************************************************************************************")
         elif option == "N":
             print("Ok")
     elif option == "2":
@@ -390,12 +394,18 @@ while check == False:
                           Inventory.append("Blackflashlight")
                      else:
                           print("Why you press anything but E!!!!!!!!?!?!?!?!??!")
+                          print("**************************************************************************************************")
+
             elif option == "T":
                 print("You investigate the top of the chair. The seat looks old and rusty")
                 print("You probably should not sit there.")
+                print("**************************************************************************************************")
+
 
             else:
                 print("Uhhhhh What???")
+                print("**************************************************************************************************")
+
     elif option == "3":
         print("You get down on your hands and knees to investigate the floorboards")
         print("You come across a secret compartment on the wall")
@@ -411,6 +421,8 @@ while check == False:
             Inventory.append("Book")
             Inventory.remove("Key")
             print(Inventory)
+            print("**************************************************************************************************")
+
 
     elif option == "4":
         print("You investigate the bookshelf.")
@@ -444,15 +456,39 @@ while check == False:
                 print("You see a code of some sort thanks to the blacklight.")
                 print("It says the following : ")
                 print("N0 E$CAP3")
+                print("You used the blackflashlight's full power")
+                Inventory.append(code1)
+                Inventory.remove("Blackflashlight")
             elif option ==  "Blackflashlight" and offMainLight == True and offMainLight == False and onMainLight == True and lightOn == True:
                  print("You shine the flashlight on the wall.")
                  print("But nothing happened.")
     elif option == "6":
-            if offMainLight == True:
-                offMainLight = False
-                onMainLight = True
-                lightOn = True
-
+            if offMainLight == True and offMainLight == False and onMainLight == True and lightOn == True:
+                 print("You investigate the safe.")
+                 option = input("Type the code needed to open the safe. It is 8 characters long. : ")
+                 if option == code1:
+                    print(f"You typed in {code1} and the safe opens")
+                    print("You see a button inside.")
+                    Inventory.remove(code1)
+                    option = input("Press E to interact with the button : ").strip().upper().split()
+                    option = "".join(option)
+                    if option == "E":
+                        print("You pressed the button.")
+                        print("A mysterious gas fills the room again.")
+                        print("When you wake up, there is a door right in front of you.")
+                        print(Inventory)
+                        option = input("What object would you use to open the door?").strip().upper().split()
+                        option = "".join(option)
+                        if option == "Masterkey":
+                             print("You used the masterkey on the door. It opens.")
+                             print("When you walk into the other room, you notice everything is gone.")
+                             print("Except for a door, locked, waiting for you to unlock it.")
+                             option = input("Press E to unlock the door : ")
+                             option = "".join(option)
+                             if option == "E":
+                                print("You unlocked the door")
+            elif onMainLight == True and offMainLight == True and onMainLight == False and lightOn == False:
+                 print("You can't see the safe in the dark")
             else:
                 print("Bruh...")
     else:
