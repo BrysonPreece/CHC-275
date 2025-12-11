@@ -436,7 +436,16 @@ while check == False:
             print("You investigate the wall.")
             print(Inventory)
             option = input("What object would you like to use in your inventory? : ")
-            if option == ""
+            option == "".join(option)
+            if option == "Blackflashlight":
+                onMainLight == True
+                offMainLight = True
+                onMainLight = False
+                lightOn = False
+                print("You shine the flashlight on the wall.")
+                print("You see a code of some sort thanks to the blacklight.")
+                print("It says the following : ")
+                print("N0 E$CAP3")
             else:
                 print("Bruh...")
         else:
