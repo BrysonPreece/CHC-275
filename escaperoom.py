@@ -338,6 +338,7 @@ while check == False:
     print("3. As you walk around the room, the floor creeks and makes an interesting sound")
     print("4. There is also a bookshelf in the room.")
     print("5. There is also a wall")
+    print("6. There is also a digital safe where you need to enter a code")
     print("Type the number that corresponds with the action that you want to do")
     print("**************************************************************************************************")
     print("1. Investigate the light switch")
@@ -345,6 +346,7 @@ while check == False:
     print("3. Investigate the floorboards")
     print("4. Investigate the bookshelf")
     print("5. Investigate the wall")
+    print("6. Investigate the safe")
     option = input ("What do you want to do? : ")
     if option == "1":
         option = input("Do you want to flip the light switch? (Y or N) : ").strip().upper().split()
@@ -437,18 +439,23 @@ while check == False:
             print(Inventory)
             option = input("What object would you like to use in your inventory? : ")
             option == "".join(option)
-            if option == "Blackflashlight":
-                onMainLight == True
-                offMainLight = True
-                onMainLight = False
-                lightOn = False
+            if option == "Blackflashlight" and onMainLight == True and offMainLight == True and onMainLight == False and lightOn == False:
                 print("You shine the flashlight on the wall.")
                 print("You see a code of some sort thanks to the blacklight.")
                 print("It says the following : ")
                 print("N0 E$CAP3")
+            elif option ==  "Blackflashlight" and offMainLight == True and offMainLight == False and onMainLight == True and lightOn == True:
+                 print("You shine the flashlight on the wall.")
+                 print("But nothing happened.")
+    elif option == "6":
+            if offMainLight == True:
+                offMainLight = False
+                onMainLight = True
+                lightOn = True
+
             else:
                 print("Bruh...")
-        else:
-            print("Bruh...")
     else:
         print("Bruh...")
+else:
+     print("Bruh...")
