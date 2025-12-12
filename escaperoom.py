@@ -319,10 +319,16 @@ while check == False:
           print("You picked up the flashlight and can now see around the room")
           print("But it looks like it runs on batteries and it's almost out of light")
           print("You have got to get out of here fast!!!")
-          print("**************************************************************************************************")
-          check = True
+          option = input("Press E to continue : ")
+          if option == "E":
+            print("**************************************************************************************************")
+            check = True
+          else:
+              print("Brotein Shake...")
      else:
-          print("You can't be serious ...")
+         print("I have no words")
+else:
+    print("You can't be serious ...")
 
 print("Suddenly you hear a voice ... It says the following")
 print("You must unlock the door in order to continue your escape")
