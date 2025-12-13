@@ -1,3 +1,4 @@
+Inventory = []
 offFlash = False
 onFlash = True
 lightOn = False
@@ -6,8 +7,8 @@ option1 = True
 code1 = ["N0E$CAP3"]
 print("Welcome to the Escape Room!!!")
 try:
-     name = input("Please type your name. : ")
-except TypeError:
+     name = input("Please type your name : ")
+except TypeError and NameError:
      print("Please type your name.")
 except Exception as e:
      print(e)
@@ -37,8 +38,8 @@ while check == False:
 
 check = False
 while check == False:
-    option = input("1. Investigate the safe, 2. Investigate the shelf, 3. Investigate the beanbag, 4. Investigate the painting. 5. Investigate the door. : ").strip().lower()
     print("TYPE THE NUMBER THAT CORRESPONDS TO THE ACTION. DO NOT INCLUDE A PERIOD")
+    option = input("1. Investigate the safe, 2. Investigate the shelf, 3. Investigate the beanbag, 4. Investigate the painting. 5. Investigate the door. 6. Open Inventory : ").strip().lower()
     print("**************************************************************************************************")
     if option == "1":
         print("**************************************************************************************************")
@@ -64,8 +65,12 @@ while check == False:
         print("You try pulling and pushing the door, but it won't budge.")
         print("You think about hitting the gym more.")
         print("**************************************************************************************************")
+    elif option == "6":
+         print(Inventory)
+         print("**************************************************************************************************")
+
     else:
-        print("That is not an option that you can do")
+        print("That is not an option that you can do.")
 check = False
 while check == False:
     tool = input("Type E to use the hammer : ").strip().upper().split()
@@ -74,7 +79,7 @@ while check == False:
     if tool == "E":
         check = True
     else:
-        print("That is not an option you can do")
+        print("That is not an option you can do.")
         print("**************************************************************************************************")
 
 
@@ -86,6 +91,8 @@ while check == False:
             print("You use the hammer on the painting. It breaks apart and reveals a huge hole on the other side.")
             print("You step in the hole and find a ladder and a pouch that can be used for inventory.")
             print("You look on the wall and see words that say: THERE IS NO ESCAPE!!!")
+            Inventory.append("Ladder")
+            print(Inventory)
             print("**************************************************************************************************")
             check = True
 
@@ -111,13 +118,12 @@ while check == False:
         print("The action you wish to do does not compute with our system.")
         print("Please try again later.")
         print("**************************************************************************************************")
-Inventory = ["Ladder"]
 
 check = False
 while check == False:
         print("You add the Ladder to your inventory. What do you do now?")
         print("1. Check the painting. 2. Check the Shelf. 3. Check the beanbag. 4. Check the Door. 5. Check the Safe. 6. Open Inventory")
-        option = input("Enter the number that corresponds to the action. Remember, don't type periods. : ")
+        option = input("Enter the number that corresponds to the action. Remember, don't type periods : ")
         print("**************************************************************************************************")
 
         if option == "1":
@@ -144,7 +150,7 @@ while check == False:
             print (Inventory)
             print("**************************************************************************************************")
         else:
-            print("That is not an object that you can use in your inventory")
+            print("That is not an object that you can use in your inventory.")
             print("**************************************************************************************************")
 check = False
 while check == False:
@@ -177,16 +183,16 @@ while check == False:
         check = True
 
     else:
-        print("Action does not compute with our system")
+        print("Action does not compute with our system.")
         print("**************************************************************************************************")
 
 check = False
 while check == False:
     print("You have now inserted the code into your inventory.")
-    print("You feel like you are almost out of here")
+    print("You feel like you are almost out of here.")
     print("TYPE THE NUMBER THAT CORRESPONDS TO THE ACTION. DO NOT INCLUDE A PERIOD")
     print("**************************************************************************************************")
-    option = input("1. Investigate the safe, 2. Investigate the shelf, 3. Investigate the beanbag, 4. Investigate the painting. 5. Investigate the door. : ").strip().lower()
+    option = input("1. Investigate the safe, 2. Investigate the shelf, 3. Investigate the beanbag, 4. Investigate the painting. 5. Investigate the door. 6. Open Inventory : ").strip().lower()
     print("**************************************************************************************************")
     if option == "1":
         print("**************************************************************************************************")
@@ -210,13 +216,17 @@ while check == False:
         print("You try pulling and pushing the door, but it won't budge.")
         print("You think about hitting the gym more.")
         print("**************************************************************************************************")
+    elif option == "6":
+         print(Inventory)
+         print("**************************************************************************************************")
+
     else:
-        print("That is not an option that you can do")
+        print("That is not an option that you can do.")
 
 check = False
 while check == False:
     print("**************************************************************************************************")
-    print("It seems the code has some writing on it")
+    print("It seems the code has some writing on it.")
     print("It says the following: ")
     print("**************************************************************************************************")
     print("H3llo. I'm writing to you about this mysterious man on the train. This man is very dangerous ... 2 dangerous")
@@ -228,17 +238,17 @@ while check == False:
     print("I b5lieve in you")
     print("From - Dr. M")
     print("**************************************************************************************************")
-    print("Please enter the seven digits into the safe. Look at the code for clues")
+    print("Please enter the seven digits into the safe. Look at the code for clues.")
     print("**************************************************************************************************")
     check = True
 check = False
 while check == False:
     a = input ("Enter number 1 : ")
     if a == "3":
-        print("Correct")
+        print("Correct.")
         check = True
     else:
-         print("Wrong Number")
+         print("Wrong Number.")
 check = False
 while check == False:
     b = input ("Enter number 2 : ")
@@ -246,47 +256,47 @@ while check == False:
          print ("Correct")
          check = True
     else:
-         print("Wrong Number")
+         print("Wrong Number.")
 check = False
 while check == False:
     c = input ("Enter number 3 : ")
     if c == "0":
-         print("Correct")
+         print("Correct.")
          check = True
     else:
-         print("Wrong Number")
+         print("Wrong Number.")
 check = False
 while check == False:
     d = input ("Enter number 4 : ")
     if d == "6":
-         print("Correct")
+         print("Correct.")
          check = True
     else:
-         print("Wrong Number")
+         print("Wrong Number.")
 check = False
 while check == False:
     e = input ("Enter number 5 : ")
     if e == "7":
-         print("Correct")
+         print("Correct.")
          check = True
     else:
-         print("Wrong Number")
+         print("Wrong Number.")
 check = False
 while check == False:
     f = input ("Enter number 6 : ")
     if f == "1":
-         print("Correct")
+         print("Correct.")
          check = True
     else:
-         print("Wrong Number")
+         print("Wrong Number.")
 check = False
 while check == False:
     g = input ("Enter number 7 : ")
     if g == "5":
-         print("Correct")
+         print("Correct.")
          check = True
     else:
-         print("Wrong Number")
+         print("Wrong Number.")
     a = int(a)
     b = int(b)
     c = int(c)
@@ -295,29 +305,29 @@ while check == False:
     f = int(f)
     g = int(g)
     code = [3,2,0,6,7,1,5]
-print (f"You typed in {code} into the safe")
-print("The safe opened and you grabbed a key inside")
-print("You added the key to your inventory and removed the code from your inventory")
+print (f"You typed in {code} into the safe.")
+print("The safe opened and you grabbed a key inside.")
+print("You added the key to your inventory and removed the code from your inventory.")
 Inventory.append("Key")
 Inventory.remove("Code")
 print(Inventory)
 print("**************************************************************************************************")
 
 print("**************************************************************************************************")
-print("You hear a laugh in the distance")
-print("A mysterious gas fills the room")
-print("You feel unconscious and fall asleep")
+print("You hear a laugh in the distance.")
+print("A mysterious gas fills the room.")
+print("You feel unconscious and fall asleep.")
 print("**************************************************************************************************")
 check = False
 while check == False:
     option = input ("Type W to wake up : ").strip().upper().split()
     option = "".join(option)
     if option == "W":
-         print("You woke up shocked as you looked around the room")
-         print("You woke up in another room of the train")
-         print("There is door that leads out of the room but it is locked")
-         print("It is dark and you can't see well")
-         print("You manage see a flashlight on the floor")
+         print("You woke up shocked as you looked around the room.")
+         print("You woke up in another room of the train.")
+         print("There is door that leads out of the room but it is locked.")
+         print("It is dark and you can't see well.")
+         print("You manage see a flashlight on the floor.")
          print("**************************************************************************************************")
          check = True
     else:
@@ -328,10 +338,11 @@ while check == False:
     option = input("Type E to interact : ").strip().upper().split()
     option = "".join(option)
     if option == "E":
-        print("You picked up the flashlight and can now see around the room")
-        print("But it looks like it runs on batteries and it's almost out of light")
+        print("You picked up the flashlight and can now see around the room.")
+        print("But it looks like it runs on batteries and it's almost out of light.")
         print("You have got to get out of here fast!!!")
         Inventory.append("Flashlight")
+        print(Inventory)
         option = input("Press E to continue : ")
         if option == "E":
             print("**************************************************************************************************")
@@ -339,22 +350,22 @@ while check == False:
         else:
             print("Brotein Shake...")
     else:
-        print("I have no words")
+        print("I have no words.")
 
-print("Suddenly you hear a voice ... It says the following")
-print("You must unlock the door in order to continue your escape")
-print("You take a look at the lock on the wall")
-print("It is a lock that has letters on it. It looks like you have to spell a word in order to unlock the lock")
+print("Suddenly you hear a voice ... It says the following: ")
+print("You must unlock the door in order to continue your escape.")
+print("You take a look at the lock on the wall.")
+print("It is a lock that has letters on it. It looks like you have to spell a word in order to unlock the lock.")
 print("**************************************************************************************************")
 offMainLight = True
 onMainLight = False
 print("You look around the room.")
-print("1. There is a light switch to turn off and on a light in the room")
-print("2. There is a chair in the room. It looks old and rusty")
-print("3. As you walk around the room, the floor creeks and makes an interesting sound")
+print("1. There is a light switch to turn off and on a light in the room.")
+print("2. There is a chair in the room. It looks old and rusty.")
+print("3. As you walk around the room, the floor creeks and makes an interesting sound.")
 print("4. There is also a bookshelf in the room.")
-print("5. There is also a wall")
-print("6. There is also a digital safe where you need to enter a code")
+print("5. There is also a wall.")
+print("6. There is also a digital safe where you need to enter a code.")
 print("**************************************************************************************************")
 option = input("Press E to continue : ").strip().upper().split()
 option = "".join(option)
@@ -367,6 +378,7 @@ while option1 == True:
     print("4. Investigate the bookshelf")
     print("5. Investigate the wall")
     print("6. Investigate the safe")
+    print("7. Open Inventory")
 
     option = input("What do you want to do? : ").strip()
 
@@ -518,7 +530,10 @@ while option1 == True:
              else:
                   print("Why? Don't you want to press it?")
                   print("**************************************************************************************************")
-
+    elif option == "7":
+         print(Inventory)
+         print("**************************************************************************************************")
+         break
 
     else:
         print("Invalid option")
