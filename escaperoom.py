@@ -335,18 +335,18 @@ print("It is a lock that has letters on it. It looks like you have to spell a wo
 print("**************************************************************************************************")
 offMainLight = True
 onMainLight = False
-check = False
-while check == False:
-    print("You look around the room.")
-    print("1. There is a light switch to turn off and on a light in the room")
-    print("2. There is a chair in the room. It looks old and rusty")
-    print("3. As you walk around the room, the floor creeks and makes an interesting sound")
-    print("4. There is also a bookshelf in the room.")
-    print("5. There is also a wall")
-    print("6. There is also a digital safe where you need to enter a code")
-    print("**************************************************************************************************")
-    option = input("Press E to continue : ").strip().upper().split()
-    option = "".join(option)
+print("You look around the room.")
+print("1. There is a light switch to turn off and on a light in the room")
+print("2. There is a chair in the room. It looks old and rusty")
+print("3. As you walk around the room, the floor creeks and makes an interesting sound")
+print("4. There is also a bookshelf in the room.")
+print("5. There is also a wall")
+print("6. There is also a digital safe where you need to enter a code")
+print("**************************************************************************************************")
+option = input("Press E to continue : ").strip().upper().split()
+option = "".join(option)
+check2 = False
+while check2 == False:
     if option == "E":
         print("Type the number that corresponds with the action that you want to do")
         print("1. Investigate the light switch")
@@ -359,206 +359,208 @@ while check == False:
         check = True
     else:
         print("U stupid!!!")
-check = False
-while check == False:
-    if option == "1":
-        option = input("Do you want to flip the light switch? (Y or N) : ").strip().upper().split()
-        option = "".join(option)
-        if option == "Y":
-            if offMainLight == True:
-                offMainLight = False
-                onMainLight = True
-                lightOn = True
-                print("Light Switch has been switched on")
-                print("**************************************************************************************************")
 
-            elif onMainLight == True:
-                offMainLight = True
-                onMainLight = False
-                lightOn = False
-                print("Light Switch has been set to off")
-                print("**************************************************************************************************")
+    check2 = False
+    while check2 == False:
+        if option == "1":
+            option = input("Do you want to flip the light switch? (Y or N) : ").strip().upper().split()
+            option = "".join(option)
+            if option == "Y":
+                    option = input("Press E to continue").strip().upper().split()
+                    option = "".join(option)
+                    if offMainLight == True:
+                        offMainLight = False
+                        onMainLight = True
+                        lightOn = True
+                        print("Light Switch has been switched on")
+                        print("**************************************************************************************************")
+
+                    elif onMainLight == True:
+                        offMainLight = True
+                        onMainLight = False
+                        lightOn = False
+                        print("Light Switch has been set to off")
+                    else:
+                        print("Bruh...")
+                        print("**************************************************************************************************")
+
+            elif option == "N":
+                print("Ok")
             else:
                 print("Bruh...")
                 print("**************************************************************************************************")
 
-        elif option == "N":
-            print("Ok")
-        else:
-            print("Bruh...")
-            print("**************************************************************************************************")
-
-    elif option == "2":
-            option = input("You investigate the rusty chair. Do you want to investigate the bottom or top of the chair? (B or T?) : ").strip().upper().split()
-            option = "".join(option)
-            if option == "B":
-                print("You investigate the bottom of the chair. You find a note on the bottom of the chair")
-                option = input("Press E to interact with the note")
+        elif option == "2":
+                option = input("You investigate the rusty chair. Do you want to investigate the bottom or top of the chair? (B or T?) : ").strip().upper().split()
                 option = "".join(option)
-                if option == "E":
-                    print("You pick up the note and read it. The note says the following : ")
-                    print("**************************************************************************************************")
-                    print("To whoever reads this note, be on the lookout at all costs.")
-                    print("There is someone on this train who is a threat")
-                    print("I have included something that will help you throughout your escape")
-                    print("Use it wisely ...")
-                    print("From - Dr. M")
-                    option = input("Press E to interact with the item : ").strip().upper().split()
+                if option == "B":
+                    print("You investigate the bottom of the chair. You find a note on the bottom of the chair")
+                    option = input("Press E to interact with the note")
                     option = "".join(option)
                     if option == "E":
-                        print("You picked up a flashlight, but this one is different")
-                        print("This is a flashlight with the blacklight feature. You can shine the blacklight in the dark now.")
-                        print("It is also fully charged. Nice!")
-                        Inventory.append("Blackflashlight")
+                        print("You pick up the note and read it. The note says the following : ")
+                        print("**************************************************************************************************")
+                        print("To whoever reads this note, be on the lookout at all costs.")
+                        print("There is someone on this train who is a threat")
+                        print("I have included something that will help you throughout your escape")
+                        print("Use it wisely ...")
+                        print("From - Dr. M")
+                        option = input("Press E to interact with the item : ").strip().upper().split()
+                        option = "".join(option)
+                        if option == "E":
+                            print("You picked up a flashlight, but this one is different")
+                            print("This is a flashlight with the blacklight feature. You can shine the blacklight in the dark now.")
+                            print("It is also fully charged. Nice!")
+                            Inventory.append("Blackflashlight")
+                            print(Inventory)
+                            print("**************************************************************************************************")
+
+                        else:
+                            print("Why you press anything but E!!!!!!!!?!?!?!?!??!")
+                            print("**************************************************************************************************")
+                    else:
+                        print("Bruh...")
+                        print("**************************************************************************************************")
+
+                elif option == "T":
+                    print("You investigate the top of the chair. The seat looks old and rusty")
+                    print("You probably should not sit there.")
+                    print("**************************************************************************************************")
+
+
+                else:
+                    print("Uhhhhh What???")
+                    print("**************************************************************************************************")
+
+        elif option == "3":
+            print("You get down on your hands and knees to investigate the floorboards")
+            print("You come across a secret compartment on the wall")
+            print("But unfortunately it's locked")
+            print("Maybe there is something which can open it")
+            print(Inventory)
+            option = input("What item from your inventory would you like to use on the secret compartment? Type quit to exit : ").strip().lower().split()
+            option = "".join(option)
+            if option == "key":
+                print("You used the key on the secret compartment")
+                print("It opens and you grab something out of the compartment")
+                print("You recieved a book")
+                Inventory.append("Book")
+                Inventory.remove("Key")
+                print(Inventory)
+                print("**************************************************************************************************")
+            else:
+                print("Brotato Chip...")
+
+
+        elif option == "4":
+            print("You investigate the bookshelf.")
+            print("You find a slot where a book should go, but it's empty.")
+            print(Inventory)
+            option = input("Which object in your inventory do you want to use to fill the slot? : ").strip().lower().split()
+            option = "".join(option)
+            if option == "book":
+                print("You put the book in the empty slot in the bookshelf")
+                print("The bookshelf makes a mysterious noise")
+                print("A book falls from the bookshelf onto the floor")
+                option = input("Press E to interact with the book : ").strip().upper().split()
+                option ="".join(option)
+            elif option == "Blackflashlight":
+                print("Can't do that action at this time.")
+                print("**************************************************************************************************")
+
+                if option == "E":
+                    print("You grabbed the book off of the shelf. The cover says, The Escape.")
+                    print("You open the book to read more, but something falls out of it.")
+                    option = input("Press E to pick up the item : ").strip().upper().split()
+                    option = "".join(option)
+                    if option == "E":
+                        print("You picked up a master key")
+                        Inventory.append("Masterkey")
+                        Inventory.remove("Book")
                         print(Inventory)
                         print("**************************************************************************************************")
 
-                    else:
-                        print("Why you press anything but E!!!!!!!!?!?!?!?!??!")
+                    elif option == "Blackflashlight":
+                        print("Can't do that at this time.")
                         print("**************************************************************************************************")
-                else:
-                    print("Bruh...")
-                    print("**************************************************************************************************")
-
-            elif option == "T":
-                print("You investigate the top of the chair. The seat looks old and rusty")
-                print("You probably should not sit there.")
-                print("**************************************************************************************************")
+                    else:
+                        print("Brotato Chip...")
+                        print("**************************************************************************************************")
 
 
-            else:
-                print("Uhhhhh What???")
-                print("**************************************************************************************************")
-
-    elif option == "3":
-        print("You get down on your hands and knees to investigate the floorboards")
-        print("You come across a secret compartment on the wall")
-        print("But unfortunately it's locked")
-        print("Maybe there is something which can open it")
-        print(Inventory)
-        option = input("What item from your inventory would you like to use on the secret compartment? Type quit to exit : ").strip().lower().split()
-        option = "".join(option)
-        if option == "key":
-            print("You used the key on the secret compartment")
-            print("It opens and you grab something out of the compartment")
-            print("You recieved a book")
-            Inventory.append("Book")
-            Inventory.remove("Key")
-            print(Inventory)
-            print("**************************************************************************************************")
-        else:
-            print("Brotato Chip...")
-
-
-    elif option == "4":
-        print("You investigate the bookshelf.")
-        print("You find a slot where a book should go, but it's empty.")
-        print(Inventory)
-        option = input("Which object in your inventory do you want to use to fill the slot? : ").strip().lower().split()
-        option = "".join(option)
-        if option == "book":
-            print("You put the book in the empty slot in the bookshelf")
-            print("The bookshelf makes a mysterious noise")
-            print("A book falls from the bookshelf onto the floor")
-            option = input("Press E to interact with the book : ").strip().upper().split()
-            option ="".join(option)
-        elif option == "Blackflashlight":
-            print("Can't do that action at this time.")
-            print("**************************************************************************************************")
-
-            if option == "E":
-                print("You grabbed the book off of the shelf. The cover says, The Escape.")
-                print("You open the book to read more, but something falls out of it.")
-                option = input("Press E to pick up the item : ").strip().upper().split()
-                option = "".join(option)
-                if option == "E":
-                    print("You picked up a master key")
-                    Inventory.append("Masterkey")
-                    Inventory.remove("Book")
-                    print(Inventory)
-                    print("**************************************************************************************************")
-
-                elif option == "Blackflashlight":
-                    print("Can't do that at this time.")
+                elif option == "blacklight":
+                    print("Can't do that at this time")
                     print("**************************************************************************************************")
                 else:
                     print("Brotato Chip...")
                     print("**************************************************************************************************")
 
-
-            elif option == "blacklight":
-                print("Can't do that at this time")
-                print("**************************************************************************************************")
             else:
                 print("Brotato Chip...")
                 print("**************************************************************************************************")
 
-        else:
-            print("Brotato Chip...")
-            print("**************************************************************************************************")
 
+        elif option == "5":
+                print("You investigate the wall.")
+                print(Inventory)
+                option = input("What object would you like to use in your inventory? : ")
+                option == "".join(option)
+                if option == "Blackflashlight" and onMainLight == True and offMainLight == True and onMainLight == False and lightOn == False:
+                    print("You shine the flashlight on the wall.")
+                    print("You see a code of some sort thanks to the blacklight.")
+                    print("It says the following : ")
+                    print("N0 E$CAP3")
+                    print("You used the blackflashlight's full power")
+                    Inventory.append(code1)
+                    Inventory.remove("Blackflashlight")
+                    print("**************************************************************************************************")
 
-    elif option == "5":
-            print("You investigate the wall.")
-            print(Inventory)
-            option = input("What object would you like to use in your inventory? : ")
-            option == "".join(option)
-            if option == "Blackflashlight" and onMainLight == True and offMainLight == True and onMainLight == False and lightOn == False:
-                print("You shine the flashlight on the wall.")
-                print("You see a code of some sort thanks to the blacklight.")
-                print("It says the following : ")
-                print("N0 E$CAP3")
-                print("You used the blackflashlight's full power")
-                Inventory.append(code1)
-                Inventory.remove("Blackflashlight")
-                print("**************************************************************************************************")
+                elif option ==  "Blackflashlight" and offMainLight == True and offMainLight == False and onMainLight == True and lightOn == True:
+                    print("You shine the flashlight on the wall.")
+                    print("But nothing happened.")
+                    print("**************************************************************************************************")
 
-            elif option ==  "Blackflashlight" and offMainLight == True and offMainLight == False and onMainLight == True and lightOn == True:
-                print("You shine the flashlight on the wall.")
-                print("But nothing happened.")
-                print("**************************************************************************************************")
+                else:
+                    print("What r u doing??!?!?!?!?")
+                    print("**************************************************************************************************")
 
-            else:
-                print("What r u doing??!?!?!?!?")
-                print("**************************************************************************************************")
-
-    elif option == "6":
-            if offMainLight == True and offMainLight == False and onMainLight == True and lightOn == True:
-                print("You investigate the safe.")
-                option = input("Type the code needed to open the safe. It is 8 characters long. : ")
-                if option == code1:
-                    print(f"You typed in {code1} and the safe opens")
-                    print("You see a button inside.")
-                    Inventory.remove(code1)
-                    option = input("Press E to interact with the button : ").strip().upper().split()
-                    option = "".join(option)
-                    if option == "E":
-                        print("You pressed the button.")
-                        print("A mysterious gas fills the room again.")
-                        print("When you wake up, there is a door right in front of you.")
-                        print(Inventory)
-                        option = input("What object would you use to open the door?").strip().upper().split()
+        elif option == "6":
+                if offMainLight == True and offMainLight == False and onMainLight == True and lightOn == True:
+                    print("You investigate the safe.")
+                    option = input("Type the code needed to open the safe. It is 8 characters long. : ")
+                    if option == code1:
+                        print(f"You typed in {code1} and the safe opens")
+                        print("You see a button inside.")
+                        Inventory.remove(code1)
+                        option = input("Press E to interact with the button : ").strip().upper().split()
                         option = "".join(option)
-                        print("**************************************************************************************************")
-
-                        if option == "Masterkey":
-                            print("You used the masterkey on the door. It opens.")
-                            print("When you walk into the other room, you notice everything is gone.")
-                            print("Except for a door, locked, waiting for you to unlock it.")
-                            option = input("Press E to unlock the door with the master key : ")
+                        if option == "E":
+                            print("You pressed the button.")
+                            print("A mysterious gas fills the room again.")
+                            print("When you wake up, there is a door right in front of you.")
+                            print(Inventory)
+                            option = input("What object would you use to open the door?").strip().upper().split()
                             option = "".join(option)
                             print("**************************************************************************************************")
 
-                            if option == "E":
-                                print("You unlocked the door with the master key.")
-                                print("You enter a control room with all sorts of buttons and levers.")
-                                Inventory.remove("Masterkey")
+                            if option == "Masterkey":
+                                print("You used the masterkey on the door. It opens.")
+                                print("When you walk into the other room, you notice everything is gone.")
+                                print("Except for a door, locked, waiting for you to unlock it.")
+                                option = input("Press E to unlock the door with the master key : ")
+                                option = "".join(option)
                                 print("**************************************************************************************************")
 
-                                check = True
-            elif onMainLight == True and offMainLight == True and onMainLight == False and lightOn == False:
-                print("You can't see the safe in the dark")
-                print("**************************************************************************************************")
+                                if option == "E":
+                                    print("You unlocked the door with the master key.")
+                                    print("You enter a control room with all sorts of buttons and levers.")
+                                    Inventory.remove("Masterkey")
+                                    print("**************************************************************************************************")
+
+                                    check2 = True
+                elif onMainLight == True and offMainLight == True and onMainLight == False and lightOn == False:
+                    print("You can't see the safe in the dark")
+                    print("**************************************************************************************************")
                     
 else:
     print("Brotato Chip...")
