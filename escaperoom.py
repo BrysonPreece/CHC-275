@@ -1,9 +1,20 @@
-offFlash = True
-onFlash = False
+offFlash = False
+onFlash = True
 lightOn = False
+lightoff = True
 option1 = True
 code1 = ["N0E$CAP3"]
 print("Welcome to the Escape Room!!!")
+try:
+     name = input("Please type your name. : ")
+except TypeError:
+     print("Please type your name.")
+except Exception as e:
+     print(e)
+finally:
+     print(f"Thanks {name}, you are all set to go!!!")
+print("**************************************************************************************************")
+
 print("You are traveling in a train traveling to go see your grandparents for Christmas. Suddenly, you get knocked out unexpectedly by a hard object.")
 print("You then fall onto the floor unconscious and you can't remember anything.")
 print("You wake up tied up in a chair in the caboose of the train. You need to get to the front of the train to stop the train and escape.")
@@ -320,6 +331,7 @@ while check == False:
         print("You picked up the flashlight and can now see around the room")
         print("But it looks like it runs on batteries and it's almost out of light")
         print("You have got to get out of here fast!!!")
+        Inventory.append("Flashlight")
         option = input("Press E to continue : ")
         if option == "E":
             print("**************************************************************************************************")
@@ -360,9 +372,44 @@ while option1 == True:
 
     if option == "1":
         print("You investigate the light switch")
+        if lightoff and onFlash == True:
+             lightoff and onFlash == False
+             print("Light switch has been turned on")
+             break
+        elif lightoff and onFlash == False:
+             lightoff and onFlash == True
+             print("Light switch has been turned off")
 
     elif option == "2":
-        print("You investigate the chair")
+        print("You investigate the chair. It looks like an old chair with lots of rust on it.")
+        option2 = input("Would you like to investigate the bottom or top of the chair? (B or T) : ").strip().upper().split()
+        option2 = "".join(option2)
+        if option2 == "T":
+             print("**************************************************************************************************")
+             print("You investigate the top of the chair. The seat looks rusty. You probably should not sit there.")
+             print("**************************************************************************************************")
+             break
+        elif option == "B":
+             print("**************************************************************************************************")
+             print("You investigate the bottom of the chair. There is a note on the bottom part of the chair.")
+             option2 = input("Press E to interact with the note : ").strip().upper().split()
+             option2 == "".join(option2)
+             if option2 == "E":
+                  print("**************************************************************************************************")
+                  print("You investigate the note. It says the following:")
+                  print("You are almost there. Just a few more puzzles and you will be free.")
+                  print("Take this. It will help you along the way.")
+                  print("From - Dr. M")
+                  print("**************************************************************************************************")
+                  print("You inspect the object that Dr. M gave you.")
+                  print("It seems like a new flashlight. With a blacklight feature.")
+                  print("You replace the old flashlight with the new one.")
+                  Inventory.append("Blackflashlight")
+                  Inventory.remove("Flashlight")
+                  print(Inventory)
+                  print("**************************************************************************************************")
+                  break
+
 
     elif option == "3":
         print("You get down on your hands and knees to investigate the floorboards")
@@ -376,26 +423,33 @@ while option1 == True:
             option2 = "".join(option2)
 
             if option2 == "key":
+                print("**************************************************************************************************")
                 print("You used the key on the secret compartment")
                 print("It opens and you grab something out of the compartment")
                 print("You received a book")
                 Inventory.append("Book")
                 Inventory.remove("Key")
                 print(Inventory)
+                print("**************************************************************************************************")
                 break
 
             elif option2 == "quit":
                 break
+            
 
             else:
                 print("Brotato Chip...")
+                print("**************************************************************************************************")
+
 
     elif option == "4":
         print("You investigate the bookshelf")
         print("It looks like there is a missing gap where something should go.")
+        print(Inventory)
         option2 = input("What item from your inventory would you like to use? (Type quit to exit) : ").strip().lower().split()
         option2 = "".join(option2)
         if option2 == "book":
+             print("**************************************************************************************************")
              print("You used the book to fill in the missing gap in the bookshelf.")
              print("The bookshelf moves to the left and reveals a hidden room.")
              print("You walk into the room and look at a book on the floor.")
@@ -405,16 +459,67 @@ while option1 == True:
                   print("You picked up the book. It has the words: The Escape as the title.")
                   print("You open up the book and something falls out.")
                   print("You picked up a Master Key and added it into your inventory.")
-        
+                  Inventory.append("Masterkey")
+                  Inventory.remove("Book")
+                  print(Inventory)
+                  print("**************************************************************************************************")
+
         elif option2 == "quit":
              break
         else:
              print("Brotein Shake...")
-    elif option == "5":
-        print("You investigate the wall")
+             print("**************************************************************************************************")
 
+    elif option == "5":
+        print(Inventory)
+        option2 = input("You investigate the wall. Would you like to use any items from your inventory on it? Type quit to exit. : ")
+        if option2 == "Masterkey" or "Book" or "Key" or "Flashlight":
+             print("You try to use that item from your inventory on the wall. But it failed.")
+        elif option2 == "Blackflashlight":
+             if lightoff and onFlash == True:
+                  print("You try and use the blackflashlight on the wall.")
+                  print("But it failed.")
+                  print("**************************************************************************************************")
+
+                  break
+             elif lightOn and offFlash == False:
+                  print("You try and use the blackflashlight on the wall.")
+                  print(f"A code appears on the wall {code1}.")
+                  print("**************************************************************************************************")
+                  break
     elif option == "6":
-        print("You investigate the safe")
+        print("You investigate the safe. A code is needed to unlock it.")
+        option2 = input("Enter the code into the safe : ")
+        if option2 == "N0E$CAP3" and lightoff and offFlash == False:
+             print(f"You entered {code1} into the safe. The safe opens and there is a big red button in the safe.")
+             Inventory.remove(code1)
+             option2 = input("Do you want to press the red button? (yes or no?) : ").strip().lower().split()
+             option2 = "".join(option2)
+             if option2 == "yes":
+                  print("You press the big red button. A mysterious gas fills the room.")
+                  print("You faint for hours until you get up again.")
+                  print("As you look around the room, everything is gone and the walls are painted white.")
+                  print("There is one final door that you must enter through, but it is locked.")
+                  print(Inventory)
+                  option2 = input("What item from your inventory would you like to use on this final door?").strip().lower().split()
+                  option2 = "".join(option2)
+                  if option2 == "Masterkey":
+                       print("You use the masterkey on the door. It opens and you see a staircase.")
+                       print("You reach your hand out, but then you start to float upwards towards the top of the staircase.")
+                       print("You see a hand reaching out for you to grab.")
+                       print("As you grab the mysterious hand, everything goes black.")
+                       print("**************************************************************************************************")
+
+                       break
+             elif option == "no":
+                  print("You try and refuse to press the button, but the temptation of what will happen draws you closer to it.")
+                  print("**************************************************************************************************")
+
+             else:
+                  print("Why? Don't you want to press it?")
+                  print("**************************************************************************************************")
+
 
     else:
         print("Invalid option")
+print(f"Thanks {name} for playing the escape room!!!")
