@@ -8,10 +8,8 @@ code1 = ["N0E$CAP3"]
 print("Welcome to the Escape Room!!!")
 try:
      name = input("Please type your name : ")
-except TypeError and NameError:
+except TypeError and ValueError:
      print("Please type your name.")
-except Exception as e:
-     print(e)
 finally:
      print(f"Thanks {name}, you are all set to go!!!")
 print("**************************************************************************************************")
@@ -23,9 +21,9 @@ print("*************************************************************************
 
 check = False
 while check == False:
-    option = input("You look around the room. You see a knife on the floor. Press E to interact. : ").strip().lower().upper()
+    option = input("You look around the room. You see a knife on the floor. Press E to interact. : ").strip().lower()
     option =="".join(option)
-    if option == "E":
+    if option == "e":
         print("**************************************************************************************************")
         print("You picked up the knife to cut the rope. You are now free to move around the room.")
         print("You look around the room. There is a door with a keyhole. You need a key to escape the Caboose.")
@@ -400,12 +398,12 @@ while option1 == True:
              print("**************************************************************************************************")
              print("You investigate the top of the chair. The seat looks rusty. You probably should not sit there.")
              print("**************************************************************************************************")
-             break
-        elif option == "B":
+        elif option2 == "B":
              print("**************************************************************************************************")
              print("You investigate the bottom of the chair. There is a note on the bottom part of the chair.")
              option2 = input("Press E to interact with the note : ").strip().upper().split()
              option2 == "".join(option2)
+             
              if option2 == "E":
                   print("**************************************************************************************************")
                   print("You investigate the note. It says the following:")
@@ -421,6 +419,10 @@ while option1 == True:
                   print(Inventory)
                   print("**************************************************************************************************")
                   break
+        else:
+            print("Bruh...")
+            print("**************************************************************************************************")
+
 
 
     elif option == "3":
