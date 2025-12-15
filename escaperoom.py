@@ -174,8 +174,8 @@ while check == False:
 
     if option == "ladder":
         print("You used the ladder to climb up the shelf. It looks like there is something shiny on the shelf.")
-        print("You picked up a code on the shelf")
-        print("You added code to your inventory and removed Ladder from your inventory")
+        print("You picked up a code on the shelf.")
+        print("You added code to your inventory and removed Ladder from your inventory.")
         Inventory.append("Code")
         Inventory.remove("Ladder")
         print(Inventory)
@@ -372,25 +372,25 @@ option = "".join(option)
 option1 = True
 
 while option1 == True:
-    print("1. Investigate the light switch")
-    print("2. Investigate the chair")
-    print("3. Investigate the floorboards")
-    print("4. Investigate the bookshelf")
-    print("5. Investigate the wall")
-    print("6. Investigate the safe")
-    print("7. Open Inventory")
+    print("1. Investigate the light switch.")
+    print("2. Investigate the chair.")
+    print("3. Investigate the floorboards.")
+    print("4. Investigate the bookshelf.")
+    print("5. Investigate the wall.")
+    print("6. Investigate the safe.")
+    print("7. Open Inventory.")
 
     option = input("What do you want to do? : ").strip()
 
     if option == "1":
-        print("You investigate the light switch")
+        print("You investigate the light switch.")
         if lightoff and onFlash == True:
              lightoff and onFlash == False
-             print("Light switch has been turned on")
+             print("Light switch has been turned on.")
              break
         elif lightoff and onFlash == False:
              lightoff and onFlash == True
-             print("Light switch has been turned off")
+             print("Light switch has been turned off.")
 
     elif option == "2":
         print("You investigate the chair. It looks like an old chair with lots of rust on it.")
@@ -424,10 +424,10 @@ while option1 == True:
 
 
     elif option == "3":
-        print("You get down on your hands and knees to investigate the floorboards")
-        print("You come across a secret compartment on the wall")
-        print("But unfortunately it's locked")
-        print("Maybe there is something which can open it")
+        print("You get down on your hands and knees to investigate the floorboards.")
+        print("You come across a secret compartment on the wall.")
+        print("But unfortunately it's locked.")
+        print("Maybe there is something which can open it.")
 
         while True:
             print(Inventory)
@@ -436,9 +436,9 @@ while option1 == True:
 
             if option2 == "key":
                 print("**************************************************************************************************")
-                print("You used the key on the secret compartment")
-                print("It opens and you grab something out of the compartment")
-                print("You received a book")
+                print("You used the key on the secret compartment.")
+                print("It opens and you grab something out of the compartment.")
+                print("You received a book.")
                 Inventory.append("Book")
                 Inventory.remove("Key")
                 print(Inventory)
@@ -455,7 +455,7 @@ while option1 == True:
 
 
     elif option == "4":
-        print("You investigate the bookshelf")
+        print("You investigate the bookshelf.")
         print("It looks like there is a missing gap where something should go.")
         print(Inventory)
         option2 = input("What item from your inventory would you like to use? (Type quit to exit) : ").strip().lower().split()
@@ -484,7 +484,7 @@ while option1 == True:
 
     elif option == "5":
         print(Inventory)
-        option2 = input("You investigate the wall. Would you like to use any items from your inventory on it? Type quit to exit. : ")
+        option2 = input("You investigate the wall. Would you like to use any items from your inventory on it? Type quit to exit : ")
         if option2 == "Masterkey" or "Book" or "Key" or "Flashlight":
              print("You try to use that item from your inventory on the wall. But it failed.")
         elif option2 == "Blackflashlight":
@@ -533,7 +533,6 @@ while option1 == True:
     elif option == "7":
          print(Inventory)
          print("**************************************************************************************************")
-         break
 
     else:
         print("Invalid option")
