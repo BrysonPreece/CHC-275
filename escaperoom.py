@@ -385,7 +385,7 @@ while option1 == True:
         if lightoff and onFlash == True:
              lightoff and onFlash == False
              print("Light switch has been turned on.")
-             break
+
         elif lightoff and onFlash == False:
              lightoff and onFlash == True
              print("Light switch has been turned off.")
