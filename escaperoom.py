@@ -4,7 +4,6 @@ onFlash = True
 lightOn = False
 lightoff = True
 option1 = True
-option9 = True
 code1 = ["N0E$CAP3"]
 print("Welcome to the Escape Room!!!")
 try:
@@ -340,22 +339,31 @@ while check == False:
         print("You picked up the flashlight and can now see around the room.")
         print("But it looks like it runs on batteries and it's almost out of light.")
         print("You have got to get out of here fast!!!")
-        Inventory.append("Flashlight")
-        print(Inventory)
+        print("**************************************************************************************************")
         option8 = input("Press E to continue : ")
         if option8 == "E":
             print("**************************************************************************************************")
+            Inventory.append("Flashlight")
+            print(Inventory)
             check = True
-        else:
-            print("Brotein Shake...")
     else:
-        print("I have no words.")
+        print("Brotein Shake...")
 
 print("Suddenly you hear a voice ... It says the following: ")
 print("You must unlock the door in order to continue your escape.")
 print("You take a look at the lock on the wall.")
 print("It is a lock that has letters on it. It looks like you have to spell a word in order to unlock the lock.")
 print("**************************************************************************************************")
+check = False
+while check == False:
+     option0 = input("Press E to continue : ").strip().upper().split()
+     option0 = "".join(option0)
+     if option0 == "E":
+          print("Alrighty Then")
+          print("**************************************************************************************************")
+          check = True
+     else:
+          print("R U Serious?")
 offMainLight = True
 onMainLight = False
 print("You look around the room.")
@@ -378,17 +386,21 @@ while option9 == True:
     print("5. Investigate the wall.")
     print("6. Investigate the safe.")
     print("7. Open Inventory.")
+    print("**************************************************************************************************")
+
 
     option9 = input("What do you want to do? : ").strip()
 
     if option9 == "1":
         print("You investigate the light switch.")
         if lightoff and onFlash == True:
-             lightoff and onFlash == False
+             lightoff = False
+             onFlash = False
              print("Light switch has been turned on.")
 
         elif lightoff and onFlash == False:
-             lightoff and onFlash == True
+             lightoff = False
+             onFlash = True
              print("Light switch has been turned off.")
 
     elif option9 == "2":
@@ -403,7 +415,7 @@ while option9 == True:
              print("**************************************************************************************************")
              print("You investigate the bottom of the chair. There is a note on the bottom part of the chair.")
              option9 = input("Press E to interact with the note : ").strip().upper().split()
-             option9 == "".join(option9)
+             option9 = "".join(option9)
              
              if option9 == "E":
                   print("**************************************************************************************************")
@@ -419,7 +431,6 @@ while option9 == True:
                   Inventory.remove("Flashlight")
                   print(Inventory)
                   print("**************************************************************************************************")
-                  break
         else:
             print("Bruh...")
             print("**************************************************************************************************")
@@ -431,29 +442,28 @@ while option9 == True:
         print("You come across a secret compartment on the wall.")
         print("But unfortunately it's locked.")
         print("Maybe there is something which can open it.")
+        print("**************************************************************************************************")
 
-        if option9 == True:
+        print(Inventory)
+        option9 = input("What item from your inventory would you like to use? (Type quit to exit) : ").strip().lower().split()
+        option9 = "".join(option9)
+
+        if option9 == "key":
+            print("**************************************************************************************************")
+            print("You used the key on the secret compartment.")
+            print("It opens and you grab something out of the compartment.")
+            print("You received a book.")
+            Inventory.append("Book")
+            Inventory.remove("Key")
             print(Inventory)
-            option9 = input("What item from your inventory would you like to use? (Type quit to exit) : ").strip().lower().split()
-            option9 = "".join(option9)
+            print("**************************************************************************************************")
 
-            if option9 == "key":
-                print("**************************************************************************************************")
-                print("You used the key on the secret compartment.")
-                print("It opens and you grab something out of the compartment.")
-                print("You received a book.")
-                Inventory.append("Book")
-                Inventory.remove("Key")
-                print(Inventory)
-                print("**************************************************************************************************")
-
-            elif option9 == "quit":
-                print("Ok")
-                print("**************************************************************************************************")
-
-            else:
-                print("Brotato Chip...")
-                print("**************************************************************************************************")
+        elif option9 == "quit":
+            print("Ok")
+            print("**************************************************************************************************")
+        else:
+            print("Brotato Chip...")
+            print("**************************************************************************************************")
 
 
     elif option9 == "4":
@@ -479,7 +489,9 @@ while option9 == True:
                   print("**************************************************************************************************")
 
         elif option9 == "quit":
-             break
+             print("Ok")
+             print("**************************************************************************************************")
+
         else:
              print("Brotein Shake...")
              print("**************************************************************************************************")
@@ -487,7 +499,7 @@ while option9 == True:
     elif option9 == "5":
         print(Inventory)
         option9 = input("You investigate the wall. Would you like to use any items from your inventory on it? Type quit to exit : ")
-        if option9 == "Masterkey" or "Book" or "Key" or "Flashlight":
+        if option9 == "Masterkey" or option9 == "Book" or option9 == "Key" or option9 == "Flashlight":
              print("You try to use that item from your inventory on the wall. But it failed.")
         elif option9 == "Blackflashlight":
              if lightoff and onFlash == True:
