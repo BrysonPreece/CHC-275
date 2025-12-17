@@ -376,9 +376,8 @@ print("6. There is also a digital safe where you need to enter a code.")
 print("**************************************************************************************************")
 option9 = input("Press E to continue : ").strip().upper().split()
 option9 = "".join(option9)
-option9 = True
-
-while option9 == True:
+running = True
+while running:
     print("1. Investigate the light switch.")
     print("2. Investigate the chair.")
     print("3. Investigate the floorboards.")
@@ -405,19 +404,19 @@ while option9 == True:
 
     elif option9 == "2":
         print("You investigate the chair. It looks like an old chair with lots of rust on it.")
-        option9 = input("Would you like to investigate the bottom or top of the chair? (B or T) : ").strip().upper().split()
-        option9 = "".join(option9)
-        if option9 == "T":
+        choice = input("Would you like to investigate the bottom or top of the chair? (B or T) : ").strip().upper().split()
+        choice = "".join(choice)
+        if choice == "T":
              print("**************************************************************************************************")
              print("You investigate the top of the chair. The seat looks rusty. You probably should not sit there.")
              print("**************************************************************************************************")
-        elif option9 == "B":
+        elif choice == "B":
              print("**************************************************************************************************")
              print("You investigate the bottom of the chair. There is a note on the bottom part of the chair.")
-             option9 = input("Press E to interact with the note : ").strip().upper().split()
-             option9 = "".join(option9)
+             choice1 = input("Press E to interact with the note : ").strip().upper().split()
+             choice1 = "".join(choice1)
              
-             if option9 == "E":
+             if choice1 == "E":
                   print("**************************************************************************************************")
                   print("You investigate the note. It says the following:")
                   print("You are almost there. Just a few more puzzles and you will be free.")
