@@ -358,7 +358,7 @@ while check == False:
          print("**************************************************************************************************")
 check = False
 while check == False:
-    option8 = input("Type E to interact : ").strip().upper().split()
+    option8 = input("Type E to interact with the flashlight : ").strip().upper().split()
     option8 = "".join(option8)
     if option8 == "E":
         print("You picked up the flashlight and can now see around the room.")
@@ -417,6 +417,7 @@ while running:
 
     if option9 == "1":
         print("You investigate the light switch.")
+        print("You flip the light switch")
         if lightoff:
              lightoff = False
              print("Light switch has been turned on.")
@@ -549,28 +550,39 @@ while running:
         print("You investigate the safe. A code is needed to unlock it.")
         option9 = input("Enter the code into the safe : ").strip()
         if option9 == "N0E$CAP3" and not lightoff:
-             print(f"You entered {code1} into the safe. The safe opens and there is a big red button in the safe.")
-             Inventory.remove("N0E$CAP3")
-             option9 = input("Do you want to press the red button? (yes or no?) : ").strip().lower().split()
-             option9 = "".join(option9)
+             print(f"You entered {option9} into the safe. The safe opens and there is a big red button in the safe.")
+             if "code" in Inventory:
+                  Inventory.remove("code")
+             option9 = input("Do you want to press the red button? (yes or no?) : ").strip().lower()
              if option9 == "yes":
+                  print("**************************************************************************************************")
                   print("You press the big red button. A mysterious gas fills the room.")
                   print("You faint for hours until you get up again.")
                   print("As you look around the room, everything is gone and the walls are painted white.")
                   print("There is one final door that you must enter through, but it is locked.")
                   print(Inventory)
-                  option9 = input("What item from your inventory would you like to use on this final door?").strip().lower().split()
-                  option9 = "".join(option9)
-                  if option9 == "masterkey":
-                       print("You use the masterkey on the door. It opens and you see a staircase.")
-                       print("You reach your hand out, but then you start to float upwards towards the top of the staircase.")
-                       print("You see a hand reaching out for you to grab.")
-                       print("As you grab the mysterious hand, everything goes black.")
-                       print("**************************************************************************************************")
+                  usedmaster = False
+                  while not usedmaster:
+                       
+                    option9 = input("What item from your inventory would you like to use on this final door?").strip().lower()
+                    if option9 == "masterkey":
+                        print("You use the masterkey on the door. It opens and you see a staircase.")
+                        print("You reach your hand out, but then you start to float upwards towards the top of the staircase.")
+                        print("You see a hand reaching out for you to grab.")
+                        print("As you grab the mysterious hand, everything goes black.")
+                        print("**************************************************************************************************")
+                        usedmaster = True
+                        running = False
+                        break
+                    else:
+                        print("YOU DID NOT USE THE MASTERKEY!!!")
+                        print("Cmon man...")
+                        print("**************************************************************************************************")
 
-                       break
              elif option9  == "no":
-                  print("You try and refuse to press the button, but the temptation of what will happen draws you closer to it.")
+                  print("You step back and decided not to press the button.")
+                  print("I wonder what will happen if you did?")
+                  print("You locked the safe back up.")
                   print("**************************************************************************************************")
              else:
                   print("You step back from the safe.")
