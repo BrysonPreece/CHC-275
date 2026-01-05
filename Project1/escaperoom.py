@@ -563,7 +563,6 @@ while running:
                   print(Inventory)
                   usedmaster = False
                   while not usedmaster:
-                    print(Inventory)   
                     option9 = input("What item from your inventory would you like to use on this final door?").strip().lower()
                     if option9 == "masterkey":
                         print("You use the masterkey on the door. It opens and you see a staircase.")
