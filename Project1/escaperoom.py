@@ -563,7 +563,7 @@ while running:
                   print(Inventory)
                   usedmaster = False
                   while not usedmaster:
-                       
+                    print(Inventory)   
                     option9 = input("What item from your inventory would you like to use on this final door?").strip().lower()
                     if option9 == "masterkey":
                         print("You use the masterkey on the door. It opens and you see a staircase.")
@@ -581,13 +581,14 @@ while running:
 
              elif option9  == "no":
                   print("You step back and decided not to press the button.")
-                  print("I wonder what will happen if you did?")
+                  print("You wonder what will happen if you did?")
                   print("You locked the safe back up.")
                   print("**************************************************************************************************")
              else:
                   print("You step back from the safe.")
         elif option9 == "N0E$CAP3" and lightoff:
              print("You can't see the safe in the dark.")
+             print("Since you can't see, you miss-type the code.")
              print("**************************************************************************************************")
 
 
