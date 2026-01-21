@@ -40,3 +40,20 @@ def update(num1):
 x = 5
 update(x)
 print(x)
+
+#Imnmutable = its state can't be changed
+#Mutable = its state can be changed
+#Intergers are immutable
+#Mutable stuff = Lists and strings
+mylist = [1,2,3,4]
+def update2(nums):
+    nums.append(5)
+update2(mylist)
+print(mylist)
+
+def updateBalance(money,change):
+    money = money - change
+    return money #All return does is tell the computer to remember something
+balance = 500
+balance = updateBalance(balance, 200)
+print(balance)
