@@ -5,17 +5,8 @@ Name: Bryson
 Section: 1
 Description: Lab 4 
 """
+from math import sqrt
 
-check = False
-while check == False:
-    print("1. getlist")
-    print("2. printmenu")
-    print("getmean")
-    print("getmedian")
-    print("getmin")
-    print("getmax")
-    print("getStdDev")
-    option = input("What do you want to do? Type in the number. Type q to exit").strip().lower()
 
 """
 Function Name: getList
@@ -24,7 +15,20 @@ Return Type: List
 Description: Prompts user to fill in an empty list until they are satisfied 
 """
 def getList():
-    pass
+    nums = []
+    check = False
+    while check == False:
+        try:
+            print("Type the word stop to stop the code.")
+            option1 = input("Please enter a number: ").lower().strip()
+            if option1 == "stop":
+                check = True
+            else:
+                option1 = int(option1)
+                nums.append(option1)
+        except Exception as e:
+            print(e)
+    return nums
 
 """ 
 Function Name: printMenu
@@ -33,8 +37,17 @@ Return Type: none
 Description: Prints menu for statistics calculator
 """
 def printMenu():
-    pass
-
+    print("\n*************************************************")
+    print("Welcome to the Calc!")
+    print("1. Mean list")
+    print("2. Median list")
+    print("3. Minimum list")
+    print("4. Maximum list")
+    print("5. Standard Dev list")
+    print("6. Quit")
+    input1 = input("Please enter your selection: ")
+    print("*************************************************")
+    return input1
 """
 Function Name: getMean
 Parameters: List
@@ -42,7 +55,9 @@ Return Type: Float
 Description: Calculates the mean for the list and returns the value 
 """
 def getMean(userList):
-    pass
+    if not userList:
+        raise ValueError("Cannot compute mean of an empty list. System error :(")
+    return sum(userList) / len(userList)
 
 """
 Function Name: getMedian
@@ -52,7 +67,8 @@ Description: Calculates the median for the list and returns the value
 """
 def getMedian(userList):
     userList = sorted(userList)
-
+    if not userList:
+        raise ValueError ("")
 """ 
 Function Name: getMin
 Parameters: List
