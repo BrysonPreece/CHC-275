@@ -1,5 +1,3 @@
-SSE = 0
-SSE = SSE + (current-mean)^2
 """ 
 Name: Bryson
 Section: 1
@@ -68,7 +66,11 @@ Description: Calculates the median for the list and returns the value
 def getMedian(userList):
     userList = sorted(userList)
     if not userList:
-        raise ValueError ("")
+        raise ValueError ("Cannot compute median of an empty list.")
+    n = len(userList)
+    m = n // 2
+    return userList [m] if n % 2 else (userList[m-1]+ userList[m]) / 2
+
 """ 
 Function Name: getMin
 Parameters: List
@@ -76,7 +78,16 @@ Return Type: Float
 Description: Finds the minimum of the unsorted list
 """
 def getMin(userList):
-    pass
+    if not userList:
+        return None
+    candidate = userList[0]
+    i = 1
+    while i < len(userList):
+        if userList[i] < candidate:
+            candidate = userList[i]
+        i+=1
+    return candidate
+    
 
 """ 
 Function Name: getMax
@@ -85,8 +96,7 @@ Return Type: Float
 Description: Finds the maximum of the unsorted list
 """
 def getMax(userList):
-    pass
-
+    print("63 lines left")
 """ 
 Function Name: getStdDev
 Parameters: List
