@@ -66,7 +66,7 @@ Description: Calculates the median for the list and returns the value
 def getMedian(userList):
     userList = sorted(userList)
     if not userList:
-        raise ValueError ("Cannot compute median of an empty list.")
+        raise ValueError ("Cannot compute the median of an empty list.")
     n = len(userList)
     m = n // 2
     return userList [m] if n % 2 else (userList[m-1]+ userList[m]) / 2
@@ -96,7 +96,15 @@ Return Type: Float
 Description: Finds the maximum of the unsorted list
 """
 def getMax(userList):
-    print("63 lines left")
+    if not userList:
+        return None
+    candidate = userList[0]
+    i = 1
+    while i < len(userList):
+        if userList[i] > candidate:
+            candidate = userList[i]
+        i +=1
+    return candidate
 """ 
 Function Name: getStdDev
 Parameters: List
@@ -104,13 +112,32 @@ Return Type: none
 Description: Calculates the population Standard Deviation of a list
 """
 def getStdDev(userList):
-    pass
-
+    if not userList:
+        raise ValueError ("Can't compute standard deviation of an empty list.")
+    mean = getMean(userList)
+    SSE = 0
+    for i in range(len(userList)):
+        SSE+= (userList[i] - mean) **2
+        variance = SSE / len(userList)
+        return sqrt(variance)
 
 
 def main():
-    pass
-
+    print("\n Before you enter the program, enter a list.")
+    userlist = getList()
+    check = False
+    while check == False:
+        input1 = printMenu()
+        if input1 == "1":
+            mean = getMean(userlist)
+            print(f"The mean of the list is {mean}.")
+            print("\n***********************************************")
+        elif input1 == "2":
+            median = getMedian(userlist)
+            print(f"The median of the list is {median}.")
+        elif input1 == "3":
+            minval = getMin(userlist)
+            print(f"The min of the list is {minval}")
 
 if __name__ == "__main__":
     main()
