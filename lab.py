@@ -123,7 +123,7 @@ def getStdDev(userList):
 
 
 def main():
-    print("\n Before you enter the program, enter a list.")
+    print("\nBefore you enter the program, enter a list.")
     userlist = getList()
     check = False
     while check == False:
@@ -138,6 +138,16 @@ def main():
         elif input1 == "3":
             minval = getMin(userlist)
             print(f"The min of the list is {minval}")
-
+            print("\n***********************************************")
+        elif input == "4":
+            maxval = getMax(userlist)
+            print(f"The max of the list is {maxval}")
+            print("\n***********************************************")
+        elif input == "5":
+            Standardeviation = getStdDev(userlist)
+            print(f"The max of the list is {Standardeviation}")
+            print("\n***********************************************")
+        elif input == "6":
+            print("Quitting the program.")
 if __name__ == "__main__":
     main()
