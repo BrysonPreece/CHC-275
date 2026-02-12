@@ -80,13 +80,13 @@ Description: Finds the minimum of the unsorted list
 def getMin(userList):
     if not userList:
         return None
-    candidate = userList[0]
+    MinMin = userList[0]
     i = 1
     while i < len(userList):
-        if userList[i] < candidate:
-            candidate = userList[i]
+        if userList[i] < MinMin:
+            MinMin = userList[i]
         i+=1
-    return candidate
+    return MinMin
     
 
 """ 
@@ -98,13 +98,13 @@ Description: Finds the maximum of the unsorted list
 def getMax(userList):
     if not userList:
         return None
-    candidate = userList[0]
+    max = userList[0]
     i = 1
     while i < len(userList):
-        if userList[i] > candidate:
-            candidate = userList[i]
+        if userList[i] > max:
+            max = userList[i]
         i +=1
-    return candidate
+    return max
 """ 
 Function Name: getStdDev
 Parameters: List
@@ -118,8 +118,8 @@ def getStdDev(userList):
     SSE = 0
     for i in range(len(userList)):
         SSE+= (userList[i] - mean) **2
-    variance = SSE / len(userList)
-    return sqrt(variance)
+    StandardD = SSE / len(userList)
+    return sqrt(StandardD)
 
 
 def main():
@@ -129,26 +129,27 @@ def main():
     while check == False:
         input2 = printMenu()
         if input2 == "1":
-            mean = getMean(userlist)
-            print(f"The mean of the list is {mean}.")
+            mean1 = getMean(userlist)
+            print(f"The mean of the list is {mean1}.")
             print("\n***********************************************")
         elif input2 == "2":
-            median = getMedian(userlist)
-            print(f"The median of the list is {median}.")
+            median1 = getMedian(userlist)
+            print(f"The median of the list is {median1}.")
         elif input2 == "3":
-            minval = getMin(userlist)
-            print(f"The min of the list is {minval}")
+            minval1 = getMin(userlist)
+            print(f"The min of the list is {minval1}")
             print("\n***********************************************")
         elif input2 == "4":
-            maxval = getMax(userlist)
-            print(f"The max of the list is {maxval}")
+            maxval1 = getMax(userlist)
+            print(f"The max of the list is {maxval1}")
             print("\n***********************************************")
         elif input2 == "5":
-            Standardeviation = getStdDev(userlist)
-            print(f"The max of the list is {Standardeviation}")
+            Standardeviation1 = getStdDev(userlist)
+            print(f"The max of the list is {Standardeviation1}")
             print("\n***********************************************")
         elif input2 == "6":
             print("Quitting the program.")
             check = True
+        print("Thanks for using the calc.")
 if __name__ == "__main__":
     main()
