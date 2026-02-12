@@ -118,8 +118,8 @@ def getStdDev(userList):
     SSE = 0
     for i in range(len(userList)):
         SSE+= (userList[i] - mean) **2
-        variance = SSE / len(userList)
-        return sqrt(variance)
+    variance = SSE / len(userList)
+    return sqrt(variance)
 
 
 def main():
@@ -127,27 +127,28 @@ def main():
     userlist = getList()
     check = False
     while check == False:
-        input1 = printMenu()
-        if input1 == "1":
+        input2 = printMenu()
+        if input2 == "1":
             mean = getMean(userlist)
             print(f"The mean of the list is {mean}.")
             print("\n***********************************************")
-        elif input1 == "2":
+        elif input2 == "2":
             median = getMedian(userlist)
             print(f"The median of the list is {median}.")
-        elif input1 == "3":
+        elif input2 == "3":
             minval = getMin(userlist)
             print(f"The min of the list is {minval}")
             print("\n***********************************************")
-        elif input == "4":
+        elif input2 == "4":
             maxval = getMax(userlist)
             print(f"The max of the list is {maxval}")
             print("\n***********************************************")
-        elif input == "5":
+        elif input2 == "5":
             Standardeviation = getStdDev(userlist)
             print(f"The max of the list is {Standardeviation}")
             print("\n***********************************************")
-        elif input == "6":
+        elif input2 == "6":
             print("Quitting the program.")
+            check = True
 if __name__ == "__main__":
     main()
