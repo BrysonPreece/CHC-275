@@ -10,6 +10,10 @@ Scenario: We are to build a connect 4 game that runs in the terminal
 currentplayer = "O"
 print()
 def drawBoard(board):
+    for row in board:
+        for space in row:
+            print(f"|{space}|", end= ' ')
+        print()
     """
     This function draws the board in  a nice, clean manner into the terminal.
         PARAMETERS:
@@ -21,6 +25,10 @@ def drawBoard(board):
  
 
 def switchPlayer(player):
+    if player == "O":
+        return "X"
+    elif player == "X":
+        return "O"
     """
     Switches player from X to O or O to X
     
@@ -33,6 +41,13 @@ def switchPlayer(player):
 
     
 def dropPiece(board,player,column):
+    for row in range(len(board)-1,-1,-1):
+        try:
+            if board[row][column] == 0:
+                board[row][column] = player
+                return True
+        except Exception as e:
+            print(f"An error has occurred. {e}")
     """ 
     Drops piece in specified column
     
@@ -59,10 +74,20 @@ def checkWinner(board,player):
         (BOOL): True if win False if not win 
     """
     #Check Horizontal Win
-
-    
+    for row in range(3,len(board)):
+            for space in range(0,len(board[row])):
+                if board[row][space] == player:
+                    if board [row][space+1] == player and board[row][space+2] == player and board[row][space+3] == player:
+                        print(f"{player} wins!")
+                        return True
+     
     #Check Vertical Win
-
+    for row in range(len(board)-3):
+        for col in range(len(board[row])):
+            if board[row][col] == player:
+                if board [row+1][col] == player and board[row+2][col] == player and board[row+3][col] == player:
+                    print(f"{player} wins!")
+                    return True
 
     #Check Left Diagonal win
  
