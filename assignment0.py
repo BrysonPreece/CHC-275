@@ -1,0 +1,7 @@
+x = input ("What is num 1?")
+y = input ("What is num 2?")
+x = int(x)
+y = int(y)
+z = x * y
+z = int(z)
+print (f"The product of {x} and {y} is {z}")
