@@ -16,4 +16,4 @@ UserSettings/
 *.mdb
 *.opendb
 *.VC.db
-/CupheadBossFinal/CupheadBoss/Assets
+/Cuphead Boss/CupheadBossFinal/Assets
