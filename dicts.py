@@ -29,3 +29,23 @@ for name in test.keys():
     print(name)
 testdict = {1:"Hello",2:True,3:[1,2,3],4:{"foo":1,"bar":2}}
 print(testdict)
+"For Loops return keys"
+mydict = {1:0,2:0,3:0}
+for x in mydict:
+    print(x)
+mydict = {1:"foo",2:"bar",3:"Hello"}
+del mydict[1] #This will remove the key/value pair at the key specified
+print(mydict) #But this is unsafe
+mydict.pop(2) #.pop is safer
+print(mydict)
+mydict.pop(2,0)
+print(mydict)
+print(mydict.pop(2,"object not found"))
+print(mydict.pop(3))
+mydict.clear()
+print(mydict)
+mytuple = (10,20,20)
+print(mytuple)
+students = {}
+students[(1,"John", "Smith")] = {"English": 80,"Math":90, "Econ":71}
+print(students)
