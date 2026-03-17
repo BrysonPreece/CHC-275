@@ -33,7 +33,11 @@ def getStudentGrades(directory, student):
         Description:
             A Function that returns a Dictinary of the student's gradebook at dictionary[student]
     """
+    grades = {}
+    while True:
+        subject = input("Enter subject(or 'done' to fi)")
     pass
+
 
 def getStudentGradeLevel(directory,student):
     """
@@ -80,8 +84,7 @@ def addStudent(directory):
         Description:
             procedure that adds a student with the following values: <dict> grades, <int> grade level, <string> email to the <dict>directory
     """
-    pass
-
+Check1 =True
 def removeStudent(directory, student):
     """
         Function Name: removeStudent
